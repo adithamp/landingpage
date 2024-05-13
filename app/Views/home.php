@@ -47,7 +47,7 @@ Home
     <div class="container text-center shadow-lg p-5" style="margin-top: 50px;">
         <div class="row justify-content-center">
             <h2 class="mb-lg-3">Solusi</h2>
-            <p>Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito Professionalcharity theme based</p>
+            <p>Beberapa contoh solusi untuk memudahkan dalam menjalan kan bisnis</p>
             <div class="col-md-4 mb-3">
                 <div class="card" style="background-color: white ; border-radius: 10px;">
                     <i class="ti ti-building-hospital" style="color: #03c988; font-size: 50px; margin-top: 5px;"></i>
@@ -141,7 +141,7 @@ Home
                     </div>
 
                     <br>
-                    <center><button class="btn btn">Jadwalkan</button></center>
+                    <center><button class="btn btn">Ajukan Keluhan</button></center>
                 </div>
             </div>
         </div>
