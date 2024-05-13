@@ -29,47 +29,66 @@
             </div>
         </div>
     </nav>
-        <div class="">
+    <div class="">
         <main>
-            <?=$this->renderSection('content')?>
+            <?= $this->renderSection('content') ?>
         </main>
-        </div>
+    </div>
 
     <div class="col-12 mt-4">
-        <div class="card" style="width: 100%;height: 200px; border: 1px solid rgb(229,234,239);">
-            <div class="card-body d-flex">
-                <div class="col-3">
-                    <div class="col text-center">
-                        <h5>PT GoldStep Indonesia.</h5>
-                    </div>
-                    <div class="col d-flex justify-content-center">
-                        <div class="col-4 text-center">
-                            <a href="">
-                                <i class="ti ti-brand-whatsapp" style="font-size: 36px;color: #25D366;"></i>
-                                <p class="ext-center text-dark-emphasis">WhatsApp</p>
-                            </a>
+        <div class="card" style="width: 100%; height: 200px; background-color: white;">
+            <div class="card-body d-flex" style="background-color: white;">
+                <div class="col-4">
+                    <div class="col d-flex justify-content-center gap-3">
+                        <div class="col-2 text-center d-flex justify-content-center st-1">
+                            <div class="lingkaran p-2">
+                                <a href="">
+                                    <i class="ti ti-brand-whatsapp text-light" style="font-size: 36px;"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-4 text-center">
+                        <div class="col-2 text-center d-flex justify-content-center mt-1">
+                            <div class="lingkaran p-2">
+                                <a href="">
+                                    <i class="ti ti-brand-instagram text-light" style="font-size: 36px;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col text-center mt-4" >
+                        <p class="txt m-0 p-0">Pt.Goldstep Teknologi Indonesia</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="col-12 text-center">
+                        <p class="txt p-0 m-0 fs-5 fw-bold">Informasi</p>
+                        <div class="col-12 p-2">
                             <a href="">
-                                <i class="ti ti-brand-instagram" style="font-size: 36px;color: #e1306c;"></i>
-                                <p class="ext-center text-dark-emphasis">Instagram</p>
+                                <p class="txt p-0 m-0 fs-3 pb-2 text-decoration-underline">Pusat Bantuan</p>
+                            </a>
+                            <a href="">
+                                <p class="txt p-0 m-0 fs-3 pb-2 text-decoration-underline">Privacy Policy</p>
+                            </a>
+                            <a href="">
+                                <p class="txt p-0 m-0 fs-3 pb-2 text-decoration-underline">Terms & Conditions</p>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-9 d-flex justify-content-center">
-                    <div class="col-4 text-end pe-3 pt-5">
-                        <p>PT GoldStep Indonesia</p>
-                    </div>
-                    <p class="pt-5">|</p>
-                    <div class="col-4 text-center pt-5">
-                        <p>PtGoldstepIndonesia@gmail.com</p>
-                    </div>
-                    <p class="pt-5">|</p>
-                    <div class="col-4 ps-3 pt-5">
-                        <p>Taman Kopo Indah 3</p>
+                <div class="col-4 d-flex justify-content-center">
+                    <div class="col-7 justify-content-center">
+                        <p class="txt p-0 m-0 fs-5 fw-bold">Contact</p>
+                        <div class="col-12 p-2 tetx-start">
+                            <p class="txt p-0 m-0 fs-4 pb-2">goldstep@gmail.com</p>
+                            <p class="txt p-0 m-0 fs-4 pb-2">+098765456789</p>
+                            <p class="txt p-0 m-0 fs-6">Taman Kopo Indah 3, Ruko D35 Bandung, Indonesia, 40128</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="footer col-12 d-flex justify-content-center pt-3">
+                <p class="txt p-0 m-0 text-light fw-bold fs-4">GoldStep</p>
+                <p class="txt ps-5 p-0 m-0 text-light fs-4 ">Copyright 2024 PT.Goldstep Teknologi Indonesia</p>
             </div>
         </div>
     </div>

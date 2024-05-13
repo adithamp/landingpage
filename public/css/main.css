@@ -72,3 +72,22 @@
 .form-group{
     margin-bottom: 20px;
 }
+.txt{
+    color:#1a3005;
+}
+.footer{
+    height: 55px;
+    background-color: #03c988;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.lingkaran{
+    border-radius: 100%;
+    -webkit-border-radius:100%;
+    -moz-box-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    background-color: #03c988;
+    height: 55px;
+    width: 55px;
+}
