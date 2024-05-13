@@ -4,7 +4,14 @@
     margin-left: 250px;
     font-size: 20px;
     font-weight: 500;
+    color: #000000;
 }
+
+
+.navbar-nav .nav-link:visited{
+    color: #03c988;
+}
+
 .navbar-brand{
     font-weight: 500;
     font-size: 30px;

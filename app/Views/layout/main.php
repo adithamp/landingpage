@@ -22,7 +22,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/home">Beranda</a>
+                    <a class="nav-link" aria-current="page" href="/home">Beranda</a>
                     <a class="nav-link" href="/solusi">Solusi</a>
                     <a class="nav-link" href="#">TentangKami</a>
                 </div>
