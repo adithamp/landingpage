@@ -8,14 +8,16 @@ Solusi
     <div class="container text-center shadow-lg p-5" style="margin-top: 50px;">
         <div class="row justify-content-center">
             <p class="mb-lg-3" style="font-size: 40px; font-weight: 500;">Solusi</p>
-            <p>Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito Professionalcharity theme based</p>
+            <p>Beberapa contoh solusi untuk memudahkan dalam menjalan kan bisnis</p>
             <div class="col-md-4 mb-3">
                 <div class="card" style="background-color: white ; border-radius: 10px;">
                     <i class="ti ti-building-hospital" style="color: #03c988; font-size: 50px; margin-top: 5px;"></i>
                     <div class="card-body p-3">
                         <h4 class="card-title"><b>RUMAH SAKIT</b></h4>
                         <p class="card-text" style="font-weight: 600;">Solusi Rumah Sakit dan Harga</p>
+                        <form action="/fitur">
                         <button class="btn btn-lg btn btn-block">Fitur</button>
+                        </form>
                     </div>
                 </div>
             </div>

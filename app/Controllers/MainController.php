@@ -16,4 +16,9 @@ class MainController extends BaseController
     {
         return view('solusi');
     }
+
+    public function fitur()
+    {
+        return view('fitur');
+    }
 }
