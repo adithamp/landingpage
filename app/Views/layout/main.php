@@ -64,13 +64,13 @@
                         <p class="txt p-0 m-0 fs-5 fw-bold">Informasi</p>
                         <div class="col-12 p-2">
                             <a href="">
-                                <p class="txt p-0 m-0 fs-3 pb-2 text-decoration-underline">Pusat Bantuan</p>
+                                <p class="txt p-0 m-0 fs-4 pb-2 text-decoration-underline">Pusat Bantuan</p>
                             </a>
                             <a href="">
-                                <p class="txt p-0 m-0 fs-3 pb-2 text-decoration-underline">Privacy Policy</p>
+                                <p class="txt p-0 m-0 fs-4 pb-2 text-decoration-underline">Privacy Policy</p>
                             </a>
                             <a href="">
-                                <p class="txt p-0 m-0 fs-3 pb-2 text-decoration-underline">Terms & Conditions</p>
+                                <p class="txt p-0 m-0 fs-4 pb-2 text-decoration-underline">Terms & Conditions</p>
                             </a>
                         </div>
                     </div>
