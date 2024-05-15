@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Headersolusi;
+use App\Models\PaketHarga;
 use App\Models\Solusi;
 use CodeIgniter\HTTP\ResponseInterface;
 
@@ -25,9 +26,11 @@ class MainController extends BaseController
     {
         $solusi = new Solusi();
         $headsolusi = new Headersolusi();
+        $paketharga = new PaketHarga();
 
         $data =[
             'solusi'=> $solusi->findAll(),
+            'paketharga'=>$paketharga->findAll(),
         ];
         $head = $headsolusi->findAll();
 
