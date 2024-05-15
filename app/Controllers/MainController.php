@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\Fitur;
 use App\Models\Headersolusi;
 use App\Models\PaketHarga;
 use App\Models\Solusi;
@@ -39,7 +40,15 @@ class MainController extends BaseController
 
     public function fitur()
     {
-        return view('fitur');
+        $fitur = new Fitur();
+        $headsolusi = new Headersolusi();
+
+        $data =[
+            'fitur'=> $fitur->findAll(),
+        ];
+        $head = $headsolusi->findAll();
+
+        return view('fitur',$data);
     }
 
     public function detail_fitur()
