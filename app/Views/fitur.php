@@ -1,51 +1,36 @@
 <?php $this->extend('layout/main') ?>
 <?php $this->section('layout') ?>
-Solusi
+fitur
 <?php $this->endsection() ?>
 <?php $this->section('content') ?>
 
 <div class="container" style="text-align: center;">
     <p class="mb-lg-3" style="font-size: 40px; font-weight: 500;">Fitur</p>
-    <p>Beberapa Fitur untuk memabtu anda dalam mengakses kesehatan</p>
-    <div class="container mt-4" style="display: flex; flex-wrap: wrap; justify-content: center; width: 1000px;">
-        <div class="card" style="width: 200px; height: auto; margin-right: 20px; margin-bottom: 20px;">
-            <div class="card-body text-center">
-                <i class="ti ti-device-heart-monitor" style="color: #03c988; font-size: 50px; margin-top: 5px;"></i>
-                <h5 class="card-title">Cek Kesehatan</h5>
-                <p class="card-text">Ketahui Kesehatan Anda di Sini</p>
-                <form action="/detail_fitur">
-                <button class="btn btn">Detail Fitur</button>
-                </form>
+    <p>Beberapa Fitur untuk membantu Anda dalam mengakses kesehatan</p>
+    <div class="row mt-4 justify-content-center">
+        <?php foreach ($fitur as $key => $value) { ?>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <img src="<?= $value['icon'] ?>" alt="" width="50px" height="50px">
+                        <div class="col-12" style="height: 100px;">
+                        <h5 class="card-title mt-3 mb-2" style="font-size: 20px;"><?= $value['nama_fitur'] ?></h5>
+                        <p class="card-text mb-3" style="font-size: 16px;"><?= $value['deskripsi'] ?></p>
+                        </div>
+                        <div class="col-12">
+                        <form action="/detail_fitur">
+                            <button class="btn  btn-sm px-3 py-2">Detail Fitur</button>
+                        </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="card" style="width: 200px; height: auto; margin-right: 20px; margin-bottom: 20px;">
-            <div class="card-body text-center">
-                <i class="ti ti-ambulance" style="color: #03c988; font-size: 50px; margin-top: 5px;"></i>
-                <h5 class="card-title">Ambulan</h5>
-                <p class="card-text">Cara Menghubungi Transportasi</p>
-                <button class="btn btn">Detail Fitur</button>
-            </div>
-        </div>
-
-        <div class="card" style="width: 200px; margin-right: 20px; margin-bottom: 20px;">
-            <div class="card-body" style="text-align: center;">
-                <i class="ti ti-emergency-bed" style="color: #03c988; font-size: 50px; margin-top: 5px;"></i>
-                <h5 class="card-title">Ruangan</h5>
-                <p>Cara Melihat Kamar yang Tersedia</p>
-                <button class="btn btn">Detail Fitur</button>
-            </div>
-        </div>
-        <div class="card" style="width: 200px; margin-right: 20px; margin-bottom: 20px;">
-            <div class="card-body" style="text-align: center;">
-                <i class="ti ti-medical-cross" style="color: #03c988; font-size: 50px; margin-top: 5px;"></i>
-                <h6 class="card-title">Obat-Obatan</h6>
-                <p>Cara Mengambil Resep/Obat</p>
-                <button class="btn btn">Detail Fitur</button>
-            </div>
-        </div>
-        <!-- Repeat the above HTML for the other 4 cards -->
+        <?php } ?>
     </div>
 </div>
+
+
+
 <div class="container">
     <div class="row" style="margin-top: 50px;">
         <div class="col-lg-6 col-md-6 col-sm-12 mt-4 mt-md-0">
