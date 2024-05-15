@@ -3,22 +3,44 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\Headersolusi;
+use App\Models\Solusi;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class MainController extends BaseController
 {
     public function index()
     {
-        return view('home');
+        $solusi = new Solusi();
+        $headsolusi = new Headersolusi();
+
+        $data =[
+            'solusi'=> $solusi->findAll(),
+        ];
+        $head = $headsolusi->findAll();
+        return view('home',$data);
     }
 
     public function solusi()
     {
-        return view('solusi');
+        $solusi = new Solusi();
+        $headsolusi = new Headersolusi();
+
+        $data =[
+            'solusi'=> $solusi->findAll(),
+        ];
+        $head = $headsolusi->findAll();
+
+        return view('solusi',$data);
     }
 
     public function fitur()
     {
         return view('fitur');
+    }
+
+    public function detail_fitur()
+    {
+        return view('detail_fitur');
     }
 }

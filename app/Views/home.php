@@ -44,38 +44,29 @@ Home
     </button>
 </div>
 <br>
-<div class="container text-center shadow-lg p-5" style="margin-top: 50px;">
-    <div class="row justify-content-center">
-        <p class="mb-lg-3" style="font-size: 40px; font-weight: 500;">Solusi</p>
-        <p>Beberapa contoh solusi untuk memudahkan dalam menjalan kan bisnis</p>
-        <div class="col-md-4 mb-3">
-            <div class="card" style="background-color: white ; border-radius: 10px;">
-                <i class="ti ti-building-hospital" style="color: #03c988; font-size: 50px; margin-top: 5px;"></i>
-                <div class="card-body p-3">
-                    <h4 class="card-title"><b>RUMAH SAKIT</b></h4>
-                    <p class="card-text" style="font-weight: 600;">Solusi Rumah Sakit dan Harga</p>
-                    <button class="btn btn-lg btn btn-block">Detail</button>
-                </div>
+<div class="col-12 d-flex justify-content-center">
+    <div class="col-10 shadow" style="margin-top: 50px; height: auto; ">
+
+        <div class="col-12 p-5 shadow">
+            <div class="col-12 text-center">
+                <p class="mb-lg-3" style="font-size: 40px; font-weight: 500;">Solusi</p>
+                <p>Beberapa contoh solusi untuk memudahkan dalam menjalan kan bisnis</p>
             </div>
-        </div>
-        <div class="col-md-4 mb-3">
-            <div class="card" style="background-color: whte; border-radius: 10px;">
-                <i class="ti ti-report-medical" style="color: #03c988; font-size: 50px; margin-top: 5px;"></i>
-                <div class="card-body">
-                    <h4 class="card-title"><b>KLINIK</b></h4>
-                    <p class="card-text" style="font-weight: 600;">Solusi Klinik dan Harga</p>
-                    <button class="btn btn-lg btn btn-block">Detail</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-3">
-            <div class="card" style="background-color: white; border-radius: 10px;">
-                <i class="ti ti-stethoscope" style="color: #03c988; font-size: 50px; margin-top: 5px;"></i>
-                <div class="card-body">
-                    <h4 class="card-title"><b>DOKTER</b></h4>
-                    <p class="card-text" style="font-weight: 600;">Solusi Dokter dan Harga</p>
-                    <button class="btn btn-lg btn btn-block">Detail</button>
-                </div>
+            <div class="col-12 md-4 d-flex gap-2 flex-wrap justify-content-center">
+                <?php foreach ($solusi as $key => $value) { ?>
+                    <div class="card  p-2" style="background-color: white ; border-radius: 10px; width: 297.5px;">
+                        <div class="col-12 d-flex justify-content-center">
+                            <img src="<?= $value['gambar'] ?>" alt="" width="120px" height="120px">
+                        </div>
+                        <div class="card-body p-3 text-center">
+                            <h4 class="card-title"><b><?= $value['nama_solusi'] ?></b></h4>
+                            <p class="card-text"><?= $value['deskripsi'] ?></p>
+                            <form action="/fitur">
+                                <button class="btn btn-lg btn btn-block">Fitur</button>
+                            </form>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>

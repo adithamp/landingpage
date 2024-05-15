@@ -13,7 +13,9 @@ Solusi
                 <i class="ti ti-device-heart-monitor" style="color: #03c988; font-size: 50px; margin-top: 5px;"></i>
                 <h5 class="card-title">Cek Kesehatan</h5>
                 <p class="card-text">Ketahui Kesehatan Anda di Sini</p>
+                <form action="/detail_fitur">
                 <button class="btn btn">Detail Fitur</button>
+                </form>
             </div>
         </div>
         <div class="card" style="width: 200px; height: auto; margin-right: 20px; margin-bottom: 20px;">
