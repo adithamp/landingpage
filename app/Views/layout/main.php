@@ -8,27 +8,27 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <link href="asset">
+
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg sticky-top" style="background-color: white;">
-        <div class="container">
-            <img src="image/gold.png" class="logo img-fluid" style="width: 50px; height: 50px;">
-            <h5 class="navbar-brand" href="/home">GoldStep</h5>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="/home">Beranda</a>
-                    <a class="nav-link" href="/solusi">Solusi</a>
-                    <a class="nav-link" href="#">TentangKami</a>
-                </div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg sticky-top" style="background-color: white;">
+    <div class="container">
+        <img src="image/gold.png" class="logo img-fluid" style="width: 50px; height: 50px;">
+        <h5 class="navbar-brand" href="/home">GoldStep</h5>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link"  aria-current="page" href="/home">Beranda</a>
+                <a class="nav-link"  href="/solusi">Solusi</a>
+                <a class="nav-link"  href="#">TentangKami</a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
     <div class="">
         <main>
             <?= $this->renderSection('content') ?>
@@ -64,13 +64,13 @@
                         <p class="txt p-0 m-0 fs-5 fw-bold">Informasi</p>
                         <div class="col-12 p-2">
                             <a href="">
-                                <p class="txt p-0 m-0 fs-4 pb-2 text-decoration-underline">Pusat Bantuan</p>
+                                <p class="txt p-0 m-0 fs-5 pb-2 text-decoration-underline">Pusat Bantuan</p>
                             </a>
                             <a href="">
-                                <p class="txt p-0 m-0 fs-4 pb-2 text-decoration-underline">Privacy Policy</p>
+                                <p class="txt p-0 m-0 fs-5 pb-2 text-decoration-underline">Privacy Policy</p>
                             </a>
                             <a href="">
-                                <p class="txt p-0 m-0 fs-4 pb-2 text-decoration-underline">Terms & Conditions</p>
+                                <p class="txt p-0 m-0 fs-5 pb-2 text-decoration-underline">Terms & Conditions</p>
                             </a>
                         </div>
                     </div>
@@ -79,8 +79,8 @@
                     <div class="col-7 justify-content-center">
                         <p class="txt p-0 m-0 fs-5 fw-bold">Contact</p>
                         <div class="col-12 p-2 tetx-start">
-                            <p class="txt p-0 m-0 fs-4 pb-2">goldstep@gmail.com</p>
-                            <p class="txt p-0 m-0 fs-4 pb-2">+098765456789</p>
+                            <p class="txt p-0 m-0 fs-5 pb-2">goldstep@gmail.com</p>
+                            <p class="txt p-0 m-0 fs-5 pb-2">+098765456789</p>
                             <p class="txt p-0 m-0 fs-6">Taman Kopo Indah 3, Ruko D35 Bandung, Indonesia, 40128</p>
                         </div>
                     </div>
