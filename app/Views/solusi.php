@@ -5,16 +5,14 @@ Solusi
 <?php $this->section('content') ?>
 
 <div class="col-12 d-flex justify-content-center">
-    <div class="col-10 shadow" style="margin-top: 50px; height: auto; ">
-
-        <div class="col-12 p-5 shadow">
+        <div class="col-12 p-5">
             <div class="col-12 text-center">
                 <p class="mb-lg-3" style="font-size: 40px; font-weight: 500;">Solusi</p>
                 <p>Beberapa contoh solusi untuk memudahkan dalam menjalan kan bisnis</p>
             </div>
             <div class="col-12 md-4 d-flex gap-2 flex-wrap justify-content-center">
                 <?php foreach ($solusi as $key => $value) { ?>
-                    <div class="card  p-2" style="background-color: white ; border-radius: 10px; width: 297.5px;">
+                    <div class="card  p-2 shadow" style="background-color: white ; border-radius: 10px; width: 297.5px;">
                         <div class="col-12 d-flex justify-content-center">
                             <img src="<?= $value['gambar'] ?>" alt="" width="120px" height="120px">
                         </div>
@@ -28,7 +26,6 @@ Solusi
                     </div>
                 <?php } ?>
             </div>
-        </div>
     </div>
 </div>
 
@@ -37,15 +34,28 @@ Solusi
         <div class="text-center mb-4">
             <p style="font-size: 40px; font-weight: 500;">Paket Harga</p>
         </div>
+        <div class="container p-2" style="justify-content: center;">
+            <ul class="nav nav-tabs" style="justify-content: center; background-color: whitesmoke; border-radius: 10px;">
+                <li class="nav-item">
+                    <a class="nav-link fs-5" style="color: #03c988;" href="#">Rumah Sakit</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-5" style="color :#03c988;" href="#">Klinik</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-5" style="color :#03c988;" href="#">Dokter</a>
+                </li>
+            </ul>
+        </div>
         <div class="row justify-content-center">
             <?php foreach ($paketharga as $key => $value) { ?>
                 <div class="col-md-4 mb-3">
                     <div class="card" style="background-color: white; border-radius: 10px;">
                         <div class="card-body">
-                            <h4 class="card-title text-center"><b>Paket Harga <?= $value['nama_paket'] ?></b></h4>
+                            <h4 class="card-title text-center"><b><?= $value['nama_paket'] ?></b></h4>
                             <p class="card-text text-center" style="font-weight: 600; font-size: 20px;"><?= $value['kategori_harga'] ?></p>
                             <hr>
-                            <p class="card-text text-center" style="font-weight: 600;font-size: 20px;">Rp. <?= $value['harga']?> Juta</p>
+                            <p class="card-text text-center" style="font-weight: 600;font-size: 20px;">Rp. <?= $value['harga'] ?> Juta</p>
                             <p class="card-text text-center" style="font-weight: 600;font-size: 20px;">Mendapatkan Modul</p>
                             <ul class="list-unstyled">
                                 <li class="mb-2"><i class="ti ti-check text-success"></i> Admisi</li>
