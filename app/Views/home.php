@@ -5,28 +5,28 @@ Home
 <?php $this->section('content') ?>
 
 
-<div id="carouselExampleDark" class="carousel carousel-dark slide">
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
+        <div class="carousel-item active" data-bs-interval="4000"> <!-- Atur interval untuk slide pertama -->
             <img src="image/cici.jpg" class="d-block w-50" alt="...">
             <div class="carousel-caption d-none d-md-block" style="margin-left: 500px; margin-bottom: 100px;text-align: right;">
                 <h2>Solusi Digital Untuk Meningkatkan Efisiensi Bisnis Anda</h2>
                 <p>Some representative placeholder content for the first slide.</p>
             </div>
         </div>
-        <div class="carousel-item" data-bs-interval="2000">
+        <div class="carousel-item" data-bs-interval="4000"> <!-- Atur interval untuk slide kedua -->
             <img src="image/1.jpg" class="d-block w-50" alt="...">
             <div class="carousel-caption d-none d-md-block" style="margin-left: 500px; margin-bottom: 100px; text-align: right;">
                 <h2>Solusi Digital Untuk Meningkatkan Efisiensi Bisnis Anda</h2>
                 <p>Some representative placeholder content for the second slide.</p>
             </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="4000"> <!-- Atur interval untuk slide ketiga -->
             <img src="image/1.jpg" class="d-block w-50" alt="...">
             <div class="carousel-caption d-none d-md-block" style="margin-left: 500px; margin-bottom: 100px; text-align: right;">
                 <h2>Solusi Digital Untuk Meningkatkan Efisiensi Bisnis Anda</h2>
@@ -72,8 +72,10 @@ Home
     </div>
 </div>
 <br>
-<div class="text" style="margin-top: 50px;">
-    <p>Penerapan Rekam Medis Elektronik sebagai ujung tombak transformasi digital fasilitas kesehatan</p>
+<div class="container">
+    <div class="text" style="margin-top: 50px;">
+        <p>Penerapan Rekam Medis Elektronik sebagai ujung tombak transformasi digital fasilitas kesehatan</p>
+    </div>
 </div>
 <div class="bungkus">
     <div class="card shadow" style="width: 440px;">
@@ -137,5 +139,13 @@ Home
         </div>
     </div>
 </div>
-
+<script>
+    // Aktifkan carousel auto slide
+    document.addEventListener('DOMContentLoaded', function () {
+        var myCarousel = document.getElementById('carouselExampleDark');
+        var carousel = new bootstrap.Carousel(myCarousel, {
+            interval: 4000 // Atur interval auto slide (ms)
+        });
+    });
+</script>
 <?php $this->endsection() ?>
