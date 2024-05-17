@@ -12,21 +12,21 @@ Home
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="4000"> <!-- Atur interval untuk slide pertama -->
+        <div class="carousel-item active" data-bs-interval="3000"> <!-- Atur interval untuk slide pertama -->
             <img src="image/cici.jpg" class="d-block w-50" alt="...">
             <div class="carousel-caption d-none d-md-block" style="margin-left: 500px; margin-bottom: 100px;text-align: right;">
                 <h2>Solusi Digital Untuk Meningkatkan Efisiensi Bisnis Anda</h2>
                 <p>Some representative placeholder content for the first slide.</p>
             </div>
         </div>
-        <div class="carousel-item" data-bs-interval="4000"> <!-- Atur interval untuk slide kedua -->
+        <div class="carousel-item" data-bs-interval="3000"> <!-- Atur interval untuk slide kedua -->
             <img src="image/1.jpg" class="d-block w-50" alt="...">
             <div class="carousel-caption d-none d-md-block" style="margin-left: 500px; margin-bottom: 100px; text-align: right;">
                 <h2>Solusi Digital Untuk Meningkatkan Efisiensi Bisnis Anda</h2>
                 <p>Some representative placeholder content for the second slide.</p>
             </div>
         </div>
-        <div class="carousel-item" data-bs-interval="4000"> <!-- Atur interval untuk slide ketiga -->
+        <div class="carousel-item" data-bs-interval="3000"> <!-- Atur interval untuk slide ketiga -->
             <img src="image/1.jpg" class="d-block w-50" alt="...">
             <div class="carousel-caption d-none d-md-block" style="margin-left: 500px; margin-bottom: 100px; text-align: right;">
                 <h2>Solusi Digital Untuk Meningkatkan Efisiensi Bisnis Anda</h2>
@@ -53,7 +53,10 @@ Home
                 <p>Beberapa contoh solusi untuk memudahkan dalam menjalan kan bisnis</p>
             </div>
             <div class="col-12 md-4 d-flex gap-2 flex-wrap justify-content-center">
-                <?php foreach ($solusi as $key => $value) { ?>
+                <?php 
+                    $solusi_sliced = array_slice($solusi, 0, 3); // Ambil 3 data pertama dari array $solusi
+                    foreach ($solusi_sliced as $key => $value) { 
+                ?>
                     <div class="card  p-2" style="background-color: white ; border-radius: 10px; width: 297.5px;">
                         <div class="col-12 d-flex justify-content-center">
                             <img src="<?= $value['gambar'] ?>" alt="" width="120px" height="120px">
@@ -71,6 +74,7 @@ Home
         </div>
     </div>
 </div>
+
 <br>
 <div class="container">
     <div class="text" style="margin-top: 50px;">
@@ -144,7 +148,7 @@ Home
     document.addEventListener('DOMContentLoaded', function () {
         var myCarousel = document.getElementById('carouselExampleDark');
         var carousel = new bootstrap.Carousel(myCarousel, {
-            interval: 4000 // Atur interval auto slide (ms)
+            interval: 3000 // Atur interval auto slide (ms)
         });
     });
 </script>
