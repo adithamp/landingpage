@@ -34,14 +34,6 @@ Home
             </div>
         </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
 </div>
 <br>
 <div class="col-12 d-flex justify-content-center">
@@ -49,13 +41,13 @@ Home
 
         <div class="col-12 p-5 shadow">
             <div class="col-12 text-center">
-                <p class="mb-lg-3" style="font-size: 40px; font-weight: 500;">Solusi</p>
-                <p>Beberapa contoh solusi untuk memudahkan dalam menjalan kan bisnis</p>
+                <p class="mb-lg-3" style="font-size: 40px; font-weight: 500;"><?= $headsolusi[0]['judul_solusi'] ?></p>
+                <p><?= $headsolusi[0]['deskripsi'] ?></p>
             </div>
             <div class="col-12 md-4 d-flex gap-2 flex-wrap justify-content-center">
-                <?php 
-                    $solusi_sliced = array_slice($solusi, 0, 3); // Ambil 3 data pertama dari array $solusi
-                    foreach ($solusi_sliced as $key => $value) { 
+                <?php
+                $solusi_sliced = array_slice($solusi, 0, 3); // Ambil 3 data pertama dari array $solusi
+                foreach ($solusi_sliced as $key => $value) {
                 ?>
                     <div class="card  p-2" style="background-color: white ; border-radius: 10px; width: 297.5px;">
                         <div class="col-12 d-flex justify-content-center">
@@ -77,36 +69,22 @@ Home
 
 <br>
 <div class="container">
-    <div class="text" style="margin-top: 50px;">
-        <p>Penerapan Rekam Medis Elektronik sebagai ujung tombak transformasi digital fasilitas kesehatan</p>
+    <div class="col-12 text-center">
+        <p class="mb-lg-3 mt-4" style="font-size: 30px; font-weight: 500;"><?= $headartikel[0]['judul_artikel'] ?></p>
+        <p><?= $headartikel[0]['deskripsi'] ?></p>
     </div>
 </div>
 <div class="bungkus">
-    <div class="card shadow" style="width: 440px;">
-        <div class="textarea1">
-            <p>UU RI No. 29 Tahun 2004 tentang praktik kedokteran Pasal 79, huruf b</p>
+    <?php foreach ($artikel as $key => $value) { ?>
+        <div class="card shadow" style="width: 440px;">
+            <div class="textarea1">
+                <p><?= $value['nama_artikel'] ?></p>
+            </div>
+            <div class="card-body">
+                <p><?= $value['deskripsi'] ?></p>
+            </div>
         </div>
-        <div class="card-body">
-            <p>Dipidana dengan pidana kurungan paling lama 1 (satu) tahun atau denda paling banyak Rp50.000.000,00 (lima puluh juta rupiah), setiap dokter atau dokter gigi yang dengan sengaja tidak membuat rekam medis</p>
-        </div>
-    </div>
-
-    <div class="card shadow" style="width: 440px;">
-        <div class="textarea1">
-            <p>Permenkes No. 24 Tahun 2022 tentang RM Pasal 45</p>
-        </div>
-        <div class="card-body">
-            <p>Seluruh Fasilitas Kesehatan harus menyelenggarakan Rekam Medis Elektronik sesuai dengan ketentuan dalam Peraturan Menteri ini paling lambat tanggal 31 Desember 2023.</p>
-        </div>
-    </div>
-    <div class="card shadow" style="width: 440px;">
-        <div class="textarea1">
-            <p>Permenkes No. 24 Tahun 2022 tentang RM Pasal 45</p>
-        </div>
-        <div class="card-body">
-            <p>Seluruh Fasilitas Kesehatan harus menyelenggarakan Rekam Medis Elektronik sesuai dengan ketentuan dalam Peraturan Menteri ini paling lambat tanggal 31 Desember 2023.</p>
-        </div>
-    </div>
+    <?php } ?>
 </div>
 
 <div class="container">
@@ -145,7 +123,7 @@ Home
 </div>
 <script>
     // Aktifkan carousel auto slide
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         var myCarousel = document.getElementById('carouselExampleDark');
         var carousel = new bootstrap.Carousel(myCarousel, {
             interval: 3000 // Atur interval auto slide (ms)
