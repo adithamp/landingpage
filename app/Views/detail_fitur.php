@@ -48,4 +48,27 @@ Solusi
     </div>
     <!-- Artikel lainnya dapat ditambahkan di sini -->
 </div>
+<div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="image/cek2.jpeg" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2>Cek Kesehatan Pada Anak</h2>
+                <p>Pertumbuhan anak akan optimal apabila mereka memperoleh kebutuhan gizi secara optimal, meliputi makronutrien serta mikronutrien. Berikut adalah penjelasan dari makronutrien dan mikronutrien untuk asupan anak.</p>
+            </div>
+        </div>
+</div>
+<div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Cek Kesehatan Pada Anak</h2>
+                <p>Pertumbuhan anak akan optimal apabila mereka memperoleh kebutuhan gizi secara optimal, meliputi makronutrien serta mikronutrien. Berikut adalah penjelasan dari makronutrien dan mikronutrien untuk asupan anak.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="image/cek2.jpeg" class="img-fluid">
+            </div>
+        </div>
+</div>
+
 <?php $this->endsection() ?>
