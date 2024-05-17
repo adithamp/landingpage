@@ -7,6 +7,8 @@ use App\Models\Fitur;
 use App\Models\Headersolusi;
 use App\Models\PaketHarga;
 use App\Models\Solusi;
+use App\Models\Artikel;
+use App\Models\HeadArtikel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class MainController extends BaseController
@@ -15,9 +17,14 @@ class MainController extends BaseController
     {
         $solusi = new Solusi();
         $headsolusi = new Headersolusi();
+        $headartikel = new HeadArtikel();
+        $artikel = new Artikel();
 
         $data =[
             'solusi'=> $solusi->findAll(),
+            'artikel'=> $artikel->findAll(),
+            'headartikel'=>$headartikel->findAll(),
+            'headsolusi'=> $headsolusi->findAll(),
         ];
         $head = $headsolusi->findAll();
         return view('home',$data);
@@ -55,4 +62,5 @@ class MainController extends BaseController
     {
         return view('detail_fitur');
     }
+    
 }
