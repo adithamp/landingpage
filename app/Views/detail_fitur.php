@@ -38,15 +38,6 @@ Solusi
             Kadar kolesterol bisa dikatakan normal apabila berada pada tingkat dibawah 200 mg/dL. Pastikan juga tekanan darah berada pada tingkat normal, yaitu pada 120/80 agar jauh dari serangan penyakit Hipertensi dan juga Hipotensi.
         </p>
     </div>
-    <div class="article">
-        <img src="image/cek1.jpg" alt="Gambar Artikel" style="justify-content: center;">
-        <h2>Jenis Pemeriksaan Kesehatan Berkala untuk Cek Kondisi Tubuh Anda</h2>
-        <p>
-        Pemeriksaan dimaksudkan untuk mendiagnosa apakah ada gangguan paru-paru atau tidak. Jenis tindakan lainnya meliputi mengukur volume paru, mekanisme paru, dan juga kemampuan difusi paru.
-        Saat memeriksa fungsi paru, akan diketahui berapa jumlah pernapasan yang terjadi selamat kurang lebih 1 menit. Normalnya, usia dewasa akan bernapas sebanyak 16-20 kali dalam waktu semenit.
-        </p>
-    </div>
-    <!-- Artikel lainnya dapat ditambahkan di sini -->
 </div>
 <div class="container">
         <div class="row">
@@ -54,16 +45,16 @@ Solusi
                 <img src="image/cek2.jpeg" class="img-fluid">
             </div>
             <div class="col-md-6">
-                <h2>Cek Kesehatan Pada Anak</h2>
-                <p>Pertumbuhan anak akan optimal apabila mereka memperoleh kebutuhan gizi secara optimal, meliputi makronutrien serta mikronutrien. Berikut adalah penjelasan dari makronutrien dan mikronutrien untuk asupan anak.</p>
+                <h2 class="text-center">Cek Kesehatan Pada Anak</h2>
+                <p class="text-center">Pertumbuhan anak akan optimal apabila mereka memperoleh kebutuhan gizi secara optimal, meliputi makronutrien serta mikronutrien. Berikut adalah penjelasan dari makronutrien dan mikronutrien untuk asupan anak.</p>
             </div>
         </div>
 </div>
 <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h2>Cek Kesehatan Pada Anak</h2>
-                <p>Pertumbuhan anak akan optimal apabila mereka memperoleh kebutuhan gizi secara optimal, meliputi makronutrien serta mikronutrien. Berikut adalah penjelasan dari makronutrien dan mikronutrien untuk asupan anak.</p>
+                <h2 class="text-center">Cek Kesehatan Pada Anak</h2>
+                <p class="text-center">Pertumbuhan anak akan optimal apabila mereka memperoleh kebutuhan gizi secara optimal, meliputi makronutrien serta mikronutrien. Berikut adalah penjelasan dari makronutrien dan mikronutrien untuk asupan anak.</p>
             </div>
             <div class="col-md-6">
                 <img src="image/cek2.jpeg" class="img-fluid">

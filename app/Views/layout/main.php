@@ -24,7 +24,7 @@
             <div class="navbar-nav">
                 <a class="nav-link"  aria-current="page" href="/home">Beranda</a>
                 <a class="nav-link"  href="/solusi">Solusi</a>
-                <a class="nav-link"  href="#">TentangKami</a>
+                <a class="nav-link"  href="/tentangkami">TentangKami</a>
             </div>
         </div>
     </div>

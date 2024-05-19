@@ -7,8 +7,8 @@ Solusi
 <div class="col-12 d-flex justify-content-center">
         <div class="col-12 p-5">
             <div class="col-12 text-center">
-                <p class="mb-lg-3" style="font-size: 40px; font-weight: 500;">Solusi</p>
-                <p>Beberapa contoh solusi untuk memudahkan dalam menjalan kan bisnis</p>
+                <p class="mb-lg-3" style="font-size: 40px; font-weight: 500;"><?= $headsolusi[0]['judul_solusi'] ?></p>
+                <p><?= $headsolusi[0]['deskripsi'] ?></p>
             </div>
             <div class="col-12 md-4 d-flex gap-2 flex-wrap justify-content-center">
                 <?php foreach ($solusi as $key => $value) { ?>

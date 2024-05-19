@@ -11,3 +11,4 @@ $routes->get('home', 'MainController::index');
 $routes->get('solusi', 'MainController::solusi');
 $routes->get('fitur', 'MainController::fitur');
 $routes->get('detail_fitur', 'MainController::detail_fitur');
+$routes->get('tentangkami', 'MainController::tentangkami');

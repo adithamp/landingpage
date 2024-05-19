@@ -9,6 +9,7 @@ use App\Models\PaketHarga;
 use App\Models\Solusi;
 use App\Models\Artikel;
 use App\Models\HeadArtikel;
+use App\Models\Tentangkami;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class MainController extends BaseController
@@ -20,14 +21,14 @@ class MainController extends BaseController
         $headartikel = new HeadArtikel();
         $artikel = new Artikel();
 
-        $data =[
-            'solusi'=> $solusi->findAll(),
-            'artikel'=> $artikel->findAll(),
-            'headartikel'=>$headartikel->findAll(),
-            'headsolusi'=> $headsolusi->findAll(),
+        $data = [
+            'solusi' => $solusi->findAll(),
+            'artikel' => $artikel->findAll(),
+            'headartikel' => $headartikel->findAll(),
+            'headsolusi' => $headsolusi->findAll(),
         ];
         $head = $headsolusi->findAll();
-        return view('home',$data);
+        return view('home', $data);
     }
 
     public function solusi()
@@ -36,13 +37,14 @@ class MainController extends BaseController
         $headsolusi = new Headersolusi();
         $paketharga = new PaketHarga();
 
-        $data =[
-            'solusi'=> $solusi->findAll(),
-            'paketharga'=>$paketharga->findAll(),
+        $data = [
+            'solusi' => $solusi->findAll(),
+            'paketharga' => $paketharga->findAll(),
+            'headsolusi' => $headsolusi->findAll(),
         ];
         $head = $headsolusi->findAll();
 
-        return view('solusi',$data);
+        return view('solusi', $data);
     }
 
     public function fitur()
@@ -50,17 +52,27 @@ class MainController extends BaseController
         $fitur = new Fitur();
         $headsolusi = new Headersolusi();
 
-        $data =[
-            'fitur'=> $fitur->findAll(),
+        $data = [
+            'fitur' => $fitur->findAll(),
         ];
         $head = $headsolusi->findAll();
 
-        return view('fitur',$data);
+        return view('fitur', $data);
     }
 
     public function detail_fitur()
     {
         return view('detail_fitur');
     }
-    
+
+    public function tentangkami()
+    {
+        $tentangkami = new Tentangkami();
+
+        $data = [
+            'tentangkami' => $tentangkami->findAll(),
+        ];
+
+        return view('tentangkami', $data);
+    }
 }
