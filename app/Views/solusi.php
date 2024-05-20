@@ -55,7 +55,7 @@ Solusi
                             <h4 class="card-title text-center"><b><?= $value['nama_paket'] ?></b></h4>
                             <p class="card-text text-center" style="font-weight: 600; font-size: 20px;"><?= $value['kategori_harga'] ?></p>
                             <hr>
-                            <p class="card-text text-center" style="font-weight: 600;font-size: 20px;">Rp. <?= $value['harga'] ?> Juta</p>
+                            <p class="card-text text-center" style="font-weight: 600;font-size: 20px;">Rp. <?= number_format($value['harga'], '0') ?></p>
                             <p class="card-text text-center" style="font-weight: 600;font-size: 20px;">Mendapatkan Modul</p>
                             <ul class="list-unstyled">
                                 <li class="mb-2"><i class="ti ti-check text-success"></i> Admisi</li>
