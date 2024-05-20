@@ -74,9 +74,10 @@ Home
         <p><?= $headartikel[0]['deskripsi'] ?></p>
     </div>
 </div>
-<div class="bungkus">
+<div class="container">
+<div class="col-12 d-flex flex-wrap gap-2 justify-content-center">
     <?php foreach ($artikel as $key => $value) { ?>
-        <div class="card shadow" style="width: 440px;">
+        <div class="card shadow col" style="padding: 24px; height: auto; width: 100%; flex: 1 0 500px;">
             <div class="textarea1">
                 <p><?= $value['nama_artikel'] ?></p>
             </div>
@@ -85,6 +86,7 @@ Home
             </div>
         </div>
     <?php } ?>
+</div>
 </div>
 
 <div class="container">
