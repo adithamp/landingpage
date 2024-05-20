@@ -11,11 +11,18 @@ Solusi
     </div>
     <img src="image/cici.jpg" style=" max-width: 50%;height: auto;margin-left: 155px;">
 </div>
-<div class="container">
-    <?php foreach ($tentangkami as $key => $value) { ?>
-        <p class="mb-lg-3 text-center" style="font-size: 40px; font-weight: 500;"><?= $value['judul'] ?></p>
-        <p class="text-center"><?= $value['deskripsi'] ?></p>
-    <?php } ?>
+<div class="container mt-5">
+    <div class="col-12 d-flex flex-wrap gap-2 justify-content-center">
+        <?php foreach ($tentangkami as $key => $value) { ?>
+            <div class="card shadow col" style="padding: 24px; height: auto; width: 100%; flex: 1 0 500px;">
+                <div class="textarea1">
+                    <p><?= $value['judul'] ?></p>
+                </div>
+                <div class="card-body">
+                    <p><?= $value['deskripsi'] ?></p>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
 </div>
-
-<?php $this->endsection() ?>
+    <?php $this->endsection() ?>
