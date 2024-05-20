@@ -6,6 +6,9 @@
     font-weight: 500;
     color: #000000;
 }
+.nav-item.active .nav-link {
+    color:#03c988
+}
 .navbar-brand{
     font-weight: 500;
     font-size: 30px;
