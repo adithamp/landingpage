@@ -9,26 +9,36 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 
-
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg sticky-top" style="background-color: white;">
-    <div class="container">
-        <img src="image/gold.png" class="logo img-fluid" style="width: 50px; height: 50px;">
-        <h5 class="navbar-brand" href="/home">GoldStep</h5>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link"  aria-current="page" href="/home">Beranda</a>
-                <a class="nav-link"  href="/solusi">Solusi</a>
-                <a class="nav-link"  href="/tentangkami">TentangKami</a>
+    <style>
+        .nav-item.active .nav-link {
+            color:#03c988
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg sticky-top" style="background-color: white;">
+        <div class="container">
+            <img src="image/gold.png" class="logo img-fluid" style="width: 50px; height: 50px;">
+            <h5 class="navbar-brand" href="/home">GoldStep</h5>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <li class="nav-item <?php echo ($_SERVER['REQUEST_URI'] === '/home') ? 'active' : ''; ?>">
+                        <a class="nav-link" aria-current="page" href="/home">Beranda</a>
+                    </li>
+                    <li class="nav-item <?php echo ($_SERVER['REQUEST_URI'] === '/solusi') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="/solusi">Solusi</a>
+                    </li>
+                    <li class="nav-item <?php echo ($_SERVER['REQUEST_URI'] === '/tentangkami') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="/tentangkami">TentangKami</a>
+                    </li>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
     <div class="">
         <main>
             <?= $this->renderSection('content') ?>
@@ -42,20 +52,20 @@
                     <div class="col d-flex justify-content-center gap-3">
                         <div class="col-2 text-center d-flex justify-content-center st-1">
                             <div class="lingkaran p-2">
-                                <a href="">
+                                <a class="text-decoration-none" href="">
                                     <i class="ti ti-brand-whatsapp text-light" style="font-size: 36px;"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="col-2 text-center d-flex justify-content-center mt-1">
                             <div class="lingkaran p-2">
-                                <a href="">
+                                <a class="text-decoration-none" href="">
                                     <i class="ti ti-brand-instagram text-light" style="font-size: 36px;"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col text-center mt-4" >
+                    <div class="col text-center mt-4">
                         <p class="txt m-0 p-0">Pt.Goldstep Teknologi Indonesia</p>
                     </div>
                 </div>
