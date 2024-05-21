@@ -51,7 +51,7 @@ fitur
                     <input type="email" class="form-control" id="email">
                 </div>
                 <div class="form-group">
-                    <label for="nomerhp">Nomer HP</label>
+                    <label for="nomerhp">Nomor Telepon</label>
                     <input type="text" class="form-control" id="nomerhp">
                 </div>
                 <div class="form-group">
