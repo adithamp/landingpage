@@ -7,34 +7,23 @@ Home
 
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <?php foreach ($banner as $key => $value) { ?>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<?= $key ?>" <?php if($key === 0) echo 'class="active"'; ?> aria-label="Slide <?= $key + 1 ?>"></button>
+        <?php } ?>
     </div>
     <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="3000"> <!-- Atur interval untuk slide pertama -->
-            <img src="image/cici.jpg" class="d-block w-50" alt="...">
-            <div class="carousel-caption d-none d-md-block" style="margin-left: 500px; margin-bottom: 100px;text-align: right;">
-                <h2>Solusi Digital Untuk Meningkatkan Efisiensi Bisnis Anda</h2>
-                <p>Some representative placeholder content for the first slide.</p>
+        <?php foreach ($banner as $key => $value) { ?>
+            <div class="carousel-item <?php if($key === 0) echo 'active'; ?>" data-bs-interval="3000">
+                <img src="<?= $value['gambar'] ?>" class="d-block" alt="..." style="height: 500px;">
+                <div class="carousel-caption d-none d-md-block" style="margin-left: 500px; margin-bottom: 100px;text-align: right;">
+                    <h2><?= $value['judul'] ?></h2>
+                    <p><?= $value['deskripsi'] ?></p>
+                </div>
             </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="3000"> <!-- Atur interval untuk slide kedua -->
-            <img src="image/1.jpg" class="d-block w-50" alt="...">
-            <div class="carousel-caption d-none d-md-block" style="margin-left: 500px; margin-bottom: 100px; text-align: right;">
-                <h2>Solusi Digital Untuk Meningkatkan Efisiensi Bisnis Anda</h2>
-                <p>Some representative placeholder content for the second slide.</p>
-            </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="3000"> <!-- Atur interval untuk slide ketiga -->
-            <img src="image/1.jpg" class="d-block w-50" alt="...">
-            <div class="carousel-caption d-none d-md-block" style="margin-left: 500px; margin-bottom: 100px; text-align: right;">
-                <h2>Solusi Digital Untuk Meningkatkan Efisiensi Bisnis Anda</h2>
-                <p>Some representative placeholder content for the third slide.</p>
-            </div>
-        </div>
+        <?php } ?>
     </div>
 </div>
+
 <br>
 <div class="col-12 d-flex justify-content-center">
     <div class="col-10 shadow" style="margin-top: 50px; height: auto; ">
@@ -75,18 +64,18 @@ Home
     </div>
 </div>
 <div class="container">
-<div class="col-12 d-flex flex-wrap gap-2 justify-content-center">
-    <?php foreach ($artikel as $key => $value) { ?>
-        <div class="card shadow col" style="padding: 24px; height: auto; width: 100%; flex: 1 0 500px;">
-            <div class="textarea1">
-                <p><?= $value['nama_artikel'] ?></p>
+    <div class="col-12 d-flex flex-wrap gap-2 justify-content-center">
+        <?php foreach ($artikel as $key => $value) { ?>
+            <div class="card shadow col" style="padding: 24px; height: auto; width: 100%; flex: 1 0 500px;">
+                <div class="textarea1">
+                    <p><?= $value['nama_artikel'] ?></p>
+                </div>
+                <div class="card-body">
+                    <p><?= $value['deskripsi'] ?></p>
+                </div>
             </div>
-            <div class="card-body">
-                <p><?= $value['deskripsi'] ?></p>
-            </div>
-        </div>
-    <?php } ?>
-</div>
+        <?php } ?>
+    </div>
 </div>
 
 <div class="container">

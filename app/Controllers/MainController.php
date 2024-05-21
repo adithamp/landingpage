@@ -10,6 +10,7 @@ use App\Models\Solusi;
 use App\Models\Artikel;
 use App\Models\HeadArtikel;
 use App\Models\Tentangkami;
+use App\Models\Baner;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class MainController extends BaseController
@@ -20,12 +21,14 @@ class MainController extends BaseController
         $headsolusi = new Headersolusi();
         $headartikel = new HeadArtikel();
         $artikel = new Artikel();
+        $banner = new Baner();
 
         $data = [
             'solusi' => $solusi->findAll(),
             'artikel' => $artikel->findAll(),
             'headartikel' => $headartikel->findAll(),
             'headsolusi' => $headsolusi->findAll(),
+            'banner' => $banner->findAll(),
         ];
         $head = $headsolusi->findAll();
         return view('home', $data);
