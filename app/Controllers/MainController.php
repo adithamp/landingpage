@@ -11,6 +11,9 @@ use App\Models\Artikel;
 use App\Models\HeadArtikel;
 use App\Models\Tentangkami;
 use App\Models\Baner;
+use App\Models\Detailfitur;
+use App\Models\Headeraboutus;
+use App\Models\Layout;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class MainController extends BaseController
@@ -65,16 +68,27 @@ class MainController extends BaseController
 
     public function detail_fitur()
     {
-        return view('detail_fitur');
+        $layout = new Layout();
+        $detail_fitur = new Detailfitur();
+
+        $data = [
+            'layout' => $layout->findAll(),
+            'detailfitur' =>$detail_fitur->findAll(),
+        ];
+
+        return view('detail_fitur',$data);
     }
 
     public function tentangkami()
     {
         $tentangkami = new Tentangkami();
+        $headaboutus = new Headeraboutus();
 
         $data = [
             'tentangkami' => $tentangkami->findAll(),
+            'headeraboutus' => $headaboutus->findAll(),
         ];
+        
 
         return view('tentangkami', $data);
     }

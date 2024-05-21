@@ -7,8 +7,8 @@ Solusi
 <div class="container mt-4">
     <div class="d-flex justify-content-end align-items-center">
         <div style="margin-top: 50px; margin-right: 50px;">
-            <h2>PT Goldstep Teknologi Indonesia</h2>
-            <p>default</p>
+            <h2><?= $headeraboutus[0]['judul_banner'] ?></h2>
+            <p><?= $headeraboutus[0]['deskripsi'] ?></p>
         </div>
         <img src="image/cici.jpg" class="img-fluid" style="max-width: 50%; height: auto; margin-left: auto;">
     </div>
