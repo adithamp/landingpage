@@ -100,4 +100,9 @@ class MainController extends BaseController
     {
         return view('privacypolicy');
     }
+
+    public function terms()
+    {
+        return view('termcondition');
+    }
 }

@@ -79,7 +79,7 @@
                             <a href="/privacypolicy">
                                 <p class="txt p-0 m-0 fs-5 pb-2 text-decoration-underline">Privacy Policy</p>
                             </a>
-                            <a href="">
+                            <a href="/termcondition">
                                 <p class="txt p-0 m-0 fs-5 pb-2 text-decoration-underline">Terms & Conditions</p>
                             </a>
                         </div>

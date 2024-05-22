@@ -5,7 +5,11 @@ Privacy Policy
 <?php $this->section('content') ?>
 
 
-<div class="container text-center">
+<div class="container card text-center p-4" style="margin-top: 30px ;">
+    <div>
+    <h2>Privacy Policy</h2>
+    <br></br>
+    </div>
 <section>
     <h2>Informasi yang Kami Kumpulkan</h2>
     <p>Kami mengumpulkan informasi dari Anda saat Anda mendaftar di situs kami atau mengisi formulir.</p>
