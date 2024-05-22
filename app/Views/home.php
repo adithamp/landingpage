@@ -3,26 +3,81 @@
 Home
 <?php $this->endsection() ?>
 <?php $this->section('content') ?>
+<style>
+    .article {
+        margin-bottom: 30px;
+        text-align: center;
+    }
 
+    .article img {
+        max-width: 100%;
+        height: 419px;
+        width: 800px;
+        margin-bottom: 10px;
 
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    }
+
+    .article h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .article p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="3000">
     <div class="carousel-indicators">
         <?php foreach ($banner as $key => $value) { ?>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<?= $key ?>" <?php if($key === 0) echo 'class="active"'; ?> aria-label="Slide <?= $key + 1 ?>"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<?= $key ?>" <?php if ($key === 0) echo 'class="active"'; ?> aria-label="Slide <?= $key + 1 ?>"></button>
         <?php } ?>
     </div>
     <div class="carousel-inner">
         <?php foreach ($banner as $key => $value) { ?>
-            <div class="carousel-item <?php if($key === 0) echo 'active'; ?>" data-bs-interval="3000">
-                <img src="<?= $value['gambar'] ?>" class="d-block" alt="..." style="height: 500px;">
-                <div class="carousel-caption d-none d-md-block" style="margin-left: 500px; margin-bottom: 100px;text-align: right;">
-                    <h2><?= $value['judul'] ?></h2>
-                    <p><?= $value['deskripsi'] ?></p>
+            <?php if ($value['layout'] == '1') { ?>
+                <div class="carousel-item <?php if ($key === 0) echo 'active'; ?>">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <img src="<?= $value['gambar'] ?>" class="img-fluid">
+                        </div>
+                        <div class="col-md-6">
+                            <h2><?= $value['judul'] ?></h2>
+                            <p><?= $value['deskripsi'] ?></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            <?php } else if ($value['layout'] == '2') { ?>
+                <div class="carousel-item <?php if ($key === 0) echo 'active'; ?>">
+                    <div class="row align-item-center">
+                        <div class="col-md-6">
+                            <h2><?= $value['judul'] ?></h2>
+                            <p><?= $value['deskripsi'] ?></p>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="<?= $value['gambar'] ?>" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            <?php } else if ($value['layout'] == '3') { ?>
+                <div class="carousel-item <?php if ($key === 0) echo 'active'; ?>">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="article">
+                                <img src="<?= $value['gambar'] ?>" alt="Gambar Artikel">
+                                <h2><?= $value['judul'] ?></h2>
+                                <p><?= $value['deskripsi'] ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
         <?php } ?>
     </div>
 </div>
+
 
 <br>
 <div class="col-12 d-flex justify-content-center">

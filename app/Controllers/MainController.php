@@ -25,6 +25,7 @@ class MainController extends BaseController
         $headartikel = new HeadArtikel();
         $artikel = new Artikel();
         $banner = new Baner();
+        $layout = new Layout();
 
         $data = [
             'solusi' => $solusi->findAll(),
@@ -32,6 +33,8 @@ class MainController extends BaseController
             'headartikel' => $headartikel->findAll(),
             'headsolusi' => $headsolusi->findAll(),
             'banner' => $banner->findAll(),
+            'layout' => $layout->findAll(),
+
         ];
         $head = $headsolusi->findAll();
         return view('home', $data);
