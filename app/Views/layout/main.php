@@ -76,7 +76,7 @@
                             <a href="">
                                 <p class="txt p-0 m-0 fs-5 pb-2 text-decoration-underline">Pusat Bantuan</p>
                             </a>
-                            <a href="">
+                            <a href="/privacypolicy">
                                 <p class="txt p-0 m-0 fs-5 pb-2 text-decoration-underline">Privacy Policy</p>
                             </a>
                             <a href="">

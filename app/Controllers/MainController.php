@@ -95,4 +95,9 @@ class MainController extends BaseController
 
         return view('tentangkami', $data);
     }
+
+    public function privacy()
+    {
+        return view('privacypolicy');
+    }
 }
