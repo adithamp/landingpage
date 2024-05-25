@@ -59,12 +59,12 @@ class MainController extends BaseController
     public function fitur()
     {
         $fitur = new Fitur();
-        $headsolusi = new Headersolusi();
 
         $data = [
             'fitur' => $fitur->findAll(),
+            // 'fitur' => $fitur->where('id_solusi' , $id )->findAll(),
         ];
-        $head = $headsolusi->findAll();
+        // dd($data);
 
         return view('fitur', $data);
     }

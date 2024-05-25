@@ -3,35 +3,35 @@
 fitur
 <?php $this->endsection() ?>
 <?php $this->section('content') ?>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<link rel="stylesheet" href="asset/poppins/font.css">
 
-<div class="container" style="text-align: center;">
-    <p class="mb-lg-3" style="font-size: 40px; font-weight: 500;">Fitur</p>
-    <p>Beberapa Fitur untuk membantu Anda dalam mengakses kesehatan</p>
-    <div class="row mt-4 justify-content-center">
-        <?php foreach ($fitur as $key => $value) { ?>
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <img src="<?= $value['icon'] ?>" alt="" width="50px" height="50px">
-                        <div class="col-12" style="height: 100px;">
-                        <h5 class="card-title mt-3 mb-2" style="font-size: 20px;"><?= $value['nama_fitur'] ?></h5>
-                        <p class="card-text mb-3" style="font-size: 16px;"><?= $value['deskripsi'] ?></p>
-                        </div>
-                        <div class="col-12">
-                        <form action="/detail_fitur">
-                            <button class="btn  btn-sm px-3 py-2">Detail Fitur</button>
-                        </form>
+<div class="container">
+    <div class="col-12 " style="text-align: center;">
+        <h1 class="mb-lg-3 mt-5 fw-bold ">Fitur</h1>
+        <p>Beberapa Fitur untuk membantu Anda dalam mengakses kesehatan</p>
+        <div class="row mt-4 justify-content-center">
+            <?php foreach ($fitur as $key => $value) { ?>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card shadow h-100">
+                        <div class="card-body text-center">
+                            <img src="<?= $value['icon'] ?>" alt="" width="50px" height="50px">
+                            <div class="col-12" style="height: 100px;">
+                                <h5 class="card-title mt-3 mb-2" style="font-size: 20px;"><?= $value['nama_fitur'] ?></h5>
+                                <p class="card-text mb-3" style="font-size: 14px;"><?= $value['deskripsi'] ?></p>
+                            </div>
+                            <div class="col-12">
+                                <form action="/detail_fitur">
+                                    <button class="btn  btn-sm px-3 py-2" style="height: 40px; font-size: 13px; width: 100%;">Detail Fitur</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        <?php } ?>
+            <?php } ?>
+        </div>
     </div>
-</div>
-
-
-
-<div class="container">
     <div class="row" style="margin-top: 50px;">
         <div class="col-lg-6 col-md-6 col-sm-12 mt-4 mt-md-0">
             <div style="text-align: left;">
@@ -65,4 +65,5 @@ fitur
         </div>
     </div>
 </div>
+<script src="js/bootstrap.min.js"></script>
 <?php $this->endsection() ?>

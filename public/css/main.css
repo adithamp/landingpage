@@ -1,7 +1,12 @@
 @import "../asset/icons/tabler-icons/tabler-icons.css";
 
+*{
+    font-family: 'Poppins';
+    /* background-color: #f1f1f1; */
+}
+
 .navbar-nav{
-    margin-left: 250px;
+    /* margin-left: 250px; */
     font-size: 20px;
     font-weight: 500;
     color: #000000;
