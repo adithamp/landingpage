@@ -83,6 +83,5 @@ Solusi
             <?php } ?>
         </div>
     </div>
-</div>
-<script src="js/bootstrap.min.js"></script>
+    <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
 <?php $this->endsection() ?>
