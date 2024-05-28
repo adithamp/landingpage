@@ -14,6 +14,12 @@ class Detailfitur extends Model
     protected $protectFields    = true;
     protected $allowedFields    = ['id','judul_detail','deskripsi','gambar','id_fitur','layout'];
 
+    public function bebas(){
+        return $this->select('detail_fitur.*,fitur.id as nama_detail, fitur.nama_fitur as namafitur , fitur.deskripsi as desk')
+        ->join('fitur','fitur.id = detail_fitur.id_fitur')
+        ->findAll();
+    }
+
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
 

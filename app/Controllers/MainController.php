@@ -87,9 +87,10 @@ class MainController extends BaseController
         $layout = new Layout();
         $detail_fitur = new Detailfitur();
         $footer = new Footer();
+    
         $data = [
             'layout' => $layout->findAll(),
-            'detailfitur' =>$detail_fitur->where('id_fitur' , $id )->findAll(),
+            'detailfitur' =>$detail_fitur->where('id_fitur' , $id )->bebas(),
             'footer' => $footer->findAll()
         ];
 
