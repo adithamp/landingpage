@@ -105,12 +105,20 @@ class MainController extends BaseController
 
     public function privacy()
     {
-        return view('privacypolicy');
+        $footer = new Footer();
+        $data = [
+            'footer' => $footer->findAll()
+        ];
+        return view('privacypolicy',$data);
     }
 
     public function terms()
     {
-        return view('termcondition');
+        $footer = new Footer();
+        $data = [
+            'footer' => $footer->findAll()
+        ];
+        return view('termcondition',$data);
     }
 
     public function ajukan_page_solusi()
