@@ -49,11 +49,19 @@ class MainController extends BaseController
         $headsolusi = new Headersolusi();
         $paketharga = new PaketHarga();
         $footer = new Footer();
+
+        $solutions = $solusi->findAll();
+        $groupedHarga = [];
+        foreach($solutions as $solution):
+            $prices = $paketharga->where('id_solusi',$solution['id'])->findAll();
+            $groupedHarga[$solution['id']] = $prices;
+        endforeach;
+
         $data = [
             'solusi' => $solusi->findAll(),
-            'paketharga' => $paketharga->findAll(),
+            'paketharga' => $groupedHarga,
             'headsolusi' => $headsolusi->findAll(),
-            'footer' => $footer->findAll()
+            'footer' => $footer->findAll(),
         ];
         $head = $headsolusi->findAll();
 
