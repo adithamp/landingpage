@@ -3,6 +3,7 @@
 Home
 <?php $this->endsection() ?>
 <?php $this->section('content') ?>
+<link rel="stylesheet" href="asset/sweetalert2/dist/sweetalert2.min.css">
 <style>
     .article {
         margin-bottom: 30px;
@@ -189,4 +190,6 @@ Home
         });
     });
 </script>
+<script src="<?= base_url('asset/sweetalert2/dist/sweetalert2.all.js') ?>"></script>
+<?= session()->getFlashdata('sweetalert');?>
 <?php $this->endsection() ?>

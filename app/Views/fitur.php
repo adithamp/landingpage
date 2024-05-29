@@ -6,7 +6,7 @@ fitur
 <link href="<?= base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
 <link href="<?= base_url('css/main.css') ?>" rel="stylesheet">
 <link rel="stylesheet" href="<?= base_url('asset/poppins/font.css') ?>">
-
+<link rel="stylesheet" href="<?= base_url('../asset/sweetalert2/dist/sweetalert2.min.css')?>">
 <div class="container">
     <div class="col-12 " style="text-align: center;">
     <?php if ($fitur) { ?>
@@ -85,4 +85,6 @@ fitur
     </div>
 </div>
 <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
+<script src="<?= base_url('../asset/sweetalert2/dist/sweetalert2.all.min.js') ?>"></script>
+<?= session()->getFlashdata('sweetalert');?>
 <?php $this->endsection() ?>

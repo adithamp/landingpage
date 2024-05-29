@@ -16,6 +16,8 @@ use App\Models\Baner;
 use App\Models\Detailfitur;
 use App\Models\Headeraboutus;
 use App\Models\Layout;
+use App\Models\Privacypolicy;
+use App\Models\Termscondition;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class MainController extends BaseController
@@ -115,7 +117,9 @@ class MainController extends BaseController
     public function privacy()
     {
         $footer = new Footer();
+        $privacypolicy = new Privacypolicy();
         $data = [
+            'privacypolicy' =>$privacypolicy->findAll(),
             'footer' => $footer->findAll()
         ];
         return view('privacypolicy',$data);
@@ -124,7 +128,9 @@ class MainController extends BaseController
     public function terms()
     {
         $footer = new Footer();
+        $terms = new Termscondition();
         $data = [
+            'termscondition' => $terms->findAll(),
             'footer' => $footer->findAll()
         ];
         return view('termcondition',$data);
@@ -133,37 +139,128 @@ class MainController extends BaseController
     public function ajukan_page_solusi()
     {
         $kontak = new KontakUser();
-        $kontak->save([
-            'nama' => $this->request->getPost('nama'),
-            'email' => $this->request->getPost('email'),
-            'nomor_telepon' => $this->request->getPost('nomor_telepon'),
-            'pesan' => $this->request->getPost('pesan'),
-        ]);
-
-        return redirect()->back()->to('/solusi');
+        $validation = \config\Services::validation();
+        $rulse = [
+            'nama' => 'required',
+            'email' => 'required',
+            'nomor_telepon' => 'required',
+            'pesan' => 'required',
+        ];
+        if ($this->validate($rulse)) {
+            $kontak->save([
+                'nama' => $this->request->getPost('nama'),
+                'email' => $this->request->getPost('email'),
+                'nomor_telepon' => $this->request->getPost('nomor_telepon'),
+                'pesan' => $this->request->getPost('pesan'),
+            ]);
+            session()->setFlashdata('sweetalert',"
+            <script>
+                Swal.fire({
+                    title: 'Berhasil',
+                    text: 'Anda Mengajukan'
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                });
+            </script>
+            ");
+            return redirect()->back()->to('/solusi');
+        } else {
+            session()->setFlashdata('sweetalert',"
+            <script>
+                Swal.fire({
+                    title: 'Gagal',
+                    text: 'Form Harus Di isi'
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                });
+            </script>
+            ");
+            return redirect()->back()->to('/solusi');
+        }
+        
     }
     public function ajukan_page_beranda()
     {
         $kontak = new KontakUser();
-        $kontak->save([
-            'nama' => $this->request->getPost('nama'),
-            'email' => $this->request->getPost('email'),
-            'nomor_telepon' => $this->request->getPost('nomor_telepon'),
-            'pesan' => $this->request->getPost('pesan'),
-        ]);
-
-        return redirect()->back()->to('/');
+        $validation = \config\Services::validation();
+        $rulse = [
+            'nama' => 'required',
+            'email' => 'required',
+            'nomor_telepon' => 'required',
+            'pesan' => 'required',
+        ];
+        if ($this->validate($rulse)) {
+            $kontak->save([
+                'nama' => $this->request->getPost('nama'),
+                'email' => $this->request->getPost('email'),
+                'nomor_telepon' => $this->request->getPost('nomor_telepon'),
+                'pesan' => $this->request->getPost('pesan'),
+            ]);
+            session()->setFlashdata('sweetalert',"
+            <script>
+                Swal.fire({
+                    title: 'Berhasil',
+                    text: 'Anda Mengajukan'
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                });
+            </script>
+            ");
+            return redirect()->back()->to('/');
+        } else {
+            session()->setFlashdata('sweetalert',"
+            <script>
+                Swal.fire({
+                    title: 'Gagal',
+                    text: 'Form Harus Di isi'
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                });
+            </script>
+            ");
+            return redirect()->back()->to('/');
+        }
     }
     public function ajukan_page_fitur()
     {
         $kontak = new KontakUser();
-        $kontak->save([
-            'nama' => $this->request->getPost('nama'),
-            'email' => $this->request->getPost('email'),
-            'nomor_telepon' => $this->request->getPost('nomor_telepon'),
-            'pesan' => $this->request->getPost('pesan'),
-        ]);
-
-        return redirect()->back()->to('/fitur');
+        $validation = \config\Services::validation();
+        $rulse = [
+            'nama' => 'required',
+            'email' => 'required',
+            'nomor_telepon' => 'required',
+            'pesan' => 'required',
+        ];
+        if ($this->validate($rulse)) {
+            $kontak->save([
+                'nama' => $this->request->getPost('nama'),
+                'email' => $this->request->getPost('email'),
+                'nomor_telepon' => $this->request->getPost('nomor_telepon'),
+                'pesan' => $this->request->getPost('pesan'),
+            ]);
+            session()->setFlashdata('sweetalert',"
+            <script>
+                Swal.fire({
+                    title: 'Berhasil',
+                    text: 'Anda Mengajukan'
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                });
+            </script>
+            ");
+            return redirect()->back()->to('/fitur');
+        } else {
+            session()->setFlashdata('sweetalert',"
+            <script>
+                Swal.fire({
+                    title: 'Gagal',
+                    text: 'Form Harus Di isi'
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                });
+            </script>
+            ");
+            return redirect()->back()->to('/fitur');
+        }
     }
 }
