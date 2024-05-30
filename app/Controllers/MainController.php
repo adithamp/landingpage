@@ -154,26 +154,26 @@ class MainController extends BaseController
                 'pesan' => $this->request->getPost('pesan'),
             ]);
             session()->setFlashdata('sweetalert',"
-            <script>
+            
                 Swal.fire({
                     title: 'Berhasil',
-                    text: 'Anda Mengajukan'
+                    text: 'Anda Mengajukan',
                     icon: 'success',
                     confirmButtonText: 'Ok'
                 });
-            </script>
+            
             ");
             return redirect()->back()->to('/solusi');
         } else {
             session()->setFlashdata('sweetalert',"
-            <script>
+            
                 Swal.fire({
                     title: 'Gagal',
-                    text: 'Form Harus Di isi'
+                    text: 'Form Harus Di isi',
                     icon: 'error',
                     confirmButtonText: 'Ok'
                 });
-            </script>
+            
             ");
             return redirect()->back()->to('/solusi');
         }
@@ -197,26 +197,26 @@ class MainController extends BaseController
                 'pesan' => $this->request->getPost('pesan'),
             ]);
             session()->setFlashdata('sweetalert',"
-            <script>
+            
                 Swal.fire({
                     title: 'Berhasil',
-                    text: 'Anda Mengajukan'
+                    text: 'Anda Mengajukan',
                     icon: 'success',
                     confirmButtonText: 'Ok'
                 });
-            </script>
+            
             ");
             return redirect()->back()->to('/');
         } else {
             session()->setFlashdata('sweetalert',"
-            <script>
+            
                 Swal.fire({
                     title: 'Gagal',
-                    text: 'Form Harus Di isi'
+                    text: 'Form Harus Di isi',
                     icon: 'error',
                     confirmButtonText: 'Ok'
                 });
-            </script>
+            
             ");
             return redirect()->back()->to('/');
         }
@@ -242,25 +242,25 @@ class MainController extends BaseController
             <script>
                 Swal.fire({
                     title: 'Berhasil',
-                    text: 'Anda Mengajukan'
+                    text: 'Anda Mengajukan',
                     icon: 'success',
                     confirmButtonText: 'Ok'
                 });
             </script>
             ");
-            return redirect()->back()->to('/fitur');
+            return redirect()->back();
         } else {
             session()->setFlashdata('sweetalert',"
             <script>
                 Swal.fire({
                     title: 'Gagal',
-                    text: 'Form Harus Di isi'
+                    text: 'Form Harus Di isi',
                     icon: 'error',
                     confirmButtonText: 'Ok'
                 });
             </script>
             ");
-            return redirect()->back()->to('/fitur');
+            return redirect()->back();
         }
     }
 }

@@ -42,8 +42,8 @@ Solusi
                     <?php foreach ($solusi as $key => $value) { ?>
                         <div class="col-sm-6 col-md-4 col-lg-3 mb-3"> <!-- Mengatur lebar tab sesuai dengan ukuran layar -->
                             <div class="shadow tablink rounded" onclick="bukaTab(event, 'tab<?= $key + 1 ?>')" style="background-color: white; border: 0.5px #03c988 solid;">
-                                <div class="text-center p-2">
-                                    <h6 class="fw-bold"><?= $value['nama_solusi'] ?></h6>
+                                <div class="text-center ">
+                                    <h6 class="fw-bold pt-2"><?= $value['nama_solusi'] ?></h6>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +85,7 @@ Solusi
                                 </div>
                             <?php }
                         } else { ?>
-                            <h2 class="text-center">Paket harga tidak ada</h2>
+                            <p class="text-center light">Paket harga belum tersedia</p>
                         <?php } ?>
                     </div>
                 </div>
@@ -134,6 +134,7 @@ Solusi
     </div>
 </div>
 </div>
+<script src="<?= base_url('asset/sweetalert2/dist/sweetalert2.all.min.js') ?>"></script>
 <script>
     // Fungsi untuk membuka tab tertentu
     function bukaTab(evt, namaTab) {
@@ -159,8 +160,8 @@ Solusi
 
     // Secara default, buka tab pertama
     document.getElementsByClassName("tablink")[0].click();
+    <?= session()->getFlashdata('sweetalert'); ?>
 </script>
 <!-- <script src="../asset/sweetalert2/dist/sweetalert2.all.min.js"></script> -->
-<script src="<?= base_url('public/asset/sweetalert2/dist/sweetalert2.all.min.js') ?>"></script>
-<?= session()->getFlashdata('sweetalert'); ?>
+
 <?php $this->endsection(); ?>

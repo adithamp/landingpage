@@ -35,8 +35,13 @@ Solusi
 </div>
 <div class="container p-3 mt-5">
     <div class="col-12 text-center">
-        <h4 class="mb-lg-3 fw-bold"><?= $detailfitur[0]['namafitur'] ?></h4>
+        <?php if ($detailfitur) { ?>
+            <h4 class="mb-lg-3 fw-bold"><?= $detailfitur[0]['namafitur'] ?></h4>
         <p><?= $detailfitur[0]['desk'] ?></p>
+        <?php } else { ?>
+            <h4 class="mb-lg-3 fw-bold"></h4>
+        <?php }?>
+        
     </div>
     <div class="col-12 rounded p-4" style="background-color: #fafafa;">
         <div class="col rounded p-4" style="background-color: white;">

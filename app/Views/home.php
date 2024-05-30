@@ -49,7 +49,8 @@ Home
                                                 ?>">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <img class="img-thumbnail" src="<?= $value['gambar'] ?>" class="img-fluid">
+                                <img class="img-thumbnail" src="<?= $value['gambar'] ?>" class="img-fluid" width="100%" height="400px">
+
                             </div>
                             <div class="col-md-6 text-end">
                                 <h2 class="fw-bold"><?= $value['judul'] ?></h2>
@@ -68,7 +69,7 @@ Home
                                 <p><?= $value['deskripsi'] ?></p>
                             </div>
                             <div class="col-md-6">
-                                <img class="img-thumbnail" src="<?= $value['gambar'] ?>" class="img-fluid">
+                                <img class="img-thumbnail" src="<?= $value['gambar'] ?>" class="img-fluid" width="100%" height="400px">
                             </div>
                         </div>
                     </div>
@@ -81,8 +82,13 @@ Home
                             <div class="col-md-12">
                                 <div class="article">
                                     <img class="rounded" src="<?php echo $value['gambar'] ?>" alt="" width="100%" height="350px">
-                                    <h1 class="mt-2 fw-bold"><?= $value['judul'] ?></h1>
-                                    <p><?= $value['deskripsi'] ?></p>
+                                    <h2 class="mt-2 fw-bold"><?= $value['judul'] ?></h2>
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <div class="col-9 text-center">
+                                            <p><?= $value['deskripsi'] ?></p>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -125,25 +131,25 @@ Home
     </div>
     <br>
     <div class="container">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h2 class="mb-lg-3 mt-4 fw-bold"><?= $headartikel[0]['judul_artikel'] ?></h2>
-            <p><?= $headartikel[0]['deskripsi'] ?></p>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="mb-lg-3 mt-4 fw-bold"><?= $headartikel[0]['judul_artikel'] ?></h2>
+                <p><?= $headartikel[0]['deskripsi'] ?></p>
+            </div>
         </div>
-    </div>
-    <div class="row justify-content-center">
-        <?php foreach ($artikel as $key => $value) { ?>
-            <div class="col-12 col-md-8 col-lg-6 mb-4">
-                <div class="card shadow" style="padding: 24px;">
-                    <div class="card-body">
-                        <h4><?= $value['nama_artikel'] ?></h4>
-                        <p class="pt-2"><?= $value['deskripsi'] ?></p>
+        <div class="row justify-content-center">
+            <?php foreach ($artikel as $key => $value) { ?>
+                <div class="col-12 col-md-8 col-lg-6 mb-4">
+                    <div class="card shadow" style="padding: 24px;">
+                        <div class="card-body">
+                            <h4><?= $value['nama_artikel'] ?></h4>
+                            <p class="pt-2"><?= $value['deskripsi'] ?></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <?php } ?>
+            <?php } ?>
+        </div>
     </div>
-</div>
 
     <div class="row" style="margin-top: 50px;">
         <div class="col-lg-6 col-md-6 col-sm-12 mt-4 mt-md-0">
@@ -181,6 +187,7 @@ Home
         </div>
     </div>
 </div>
+<script src="<?= base_url('asset/sweetalert2/dist/sweetalert2.all.min.js') ?>"></script>
 <script>
     // Aktifkan carousel auto slide
     document.addEventListener('DOMContentLoaded', function() {
@@ -189,7 +196,7 @@ Home
             interval: 3000 // Atur interval auto slide (ms)
         });
     });
+    <?= session()->getFlashdata('sweetalert'); ?>
 </script>
-<script src="<?= base_url('asset/sweetalert2/dist/sweetalert2.all.js') ?>"></script>
-<?= session()->getFlashdata('sweetalert');?>
+
 <?php $this->endsection() ?>

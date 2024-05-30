@@ -9,6 +9,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="asset/poppins/font.css">
+    <link rel="stylesheet" href="asset/sweetalert2/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -104,5 +105,6 @@
 </body>
 
 <script src="js/bootstrap.min.js"></script>
-
+<script src="<?php base_url('asset/sweetalert2/dist/sweetalert2.all.js') ?>"></script>
+<?php session()->getFlashdata('sweetalert'); ?>
 </html>
