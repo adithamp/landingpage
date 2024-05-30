@@ -6,13 +6,13 @@ fitur
 <link href="<?= base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
 <link href="<?= base_url('css/main.css') ?>" rel="stylesheet">
 <link rel="stylesheet" href="<?= base_url('asset/poppins/font.css') ?>">
-<link rel="stylesheet" href="<?= base_url('../asset/sweetalert2/dist/sweetalert2.min.css')?>">
+<link rel="stylesheet" href="<?= base_url('../asset/sweetalert2/dist/sweetalert2.min.css') ?>">
 <div class="container">
     <div class="col-12 " style="text-align: center;">
-    <?php if ($fitur) { ?>
-        <h1 class="mb-lg-3 mt-5 fw-bold ">Fitur</h1>
-        <p>Beberapa Fitur untuk membantu Anda dalam mengakses kesehatan</p>
-            <?php } ?>
+        <?php if ($fitur) { ?>
+            <h1 class="mb-lg-3 mt-5 fw-bold ">Fitur</h1>
+            <p>Beberapa Fitur untuk membantu Anda dalam mengakses kesehatan</p>
+        <?php } ?>
         <div class="row mt-4 justify-content-center">
 
             <?php if ($fitur) { ?>
@@ -26,7 +26,7 @@ fitur
                                     <p class="card-text mb-3" style="font-size: 14px;"><?= $value['deskripsi'] ?></p>
                                 </div>
                                 <div class="col-12">
-                                    <a href="/detail_fitur/<?=  $value['id'] ?>" method="post">
+                                    <a href="/detail_fitur/<?= $value['id'] ?>" method="post">
                                         <button class="btn  btn-sm px-3 py-2" style="height: 40px; font-size: 13px; width: 100%;">Detail Fitur</button>
                                     </a>
                                 </div>
@@ -49,6 +49,35 @@ fitur
 
         </div>
     </div>
+    <div class="row justify-content-center d-flex" style="flex-wrap: wrap;">
+        <?php foreach ($paketharga as $key => $value) { ?>
+            <div class="col-md-3 mb-3">
+                <div class="card shadow" style="background-color: white; border-radius: 10px;">
+                    <div class="card-body">
+                        <h4 class="card-title text-center"><b><?= $value['nama_paket'] ?></b></h4>
+                        <p class="card-text text-center" style="font-weight: 600; font-size: 20px;">
+                            <?= $value['kategori_harga'] ?>
+                        </p>
+                        <hr>
+                        <p class="card-text text-center" style="font-size: 20px;">Rp.
+                            <?= number_format($value['harga'], '0') ?>
+                        </p>
+                        <p class="card-text text-center" style="font-weight: 600;font-size: 17px;">
+                            Mendapatkan Modul</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
+                                Admisi</li>
+                            <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
+                                Dashboard</li>
+                            <li style="font-size: 13px;"><i class="ti ti-check text-success"></i> Booking Online
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+
     <div class="row" style="margin-top: 50px;">
         <div class="col-lg-6 col-md-6 col-sm-12 mt-4 mt-md-0">
             <div style="text-align: left;">
@@ -86,5 +115,5 @@ fitur
 </div>
 <script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
 <script src="<?= base_url('../asset/sweetalert2/dist/sweetalert2.all.min.js') ?>"></script>
-<?= session()->getFlashdata('sweetalert');?>
+<?= session()->getFlashdata('sweetalert'); ?>
 <?php $this->endsection() ?>

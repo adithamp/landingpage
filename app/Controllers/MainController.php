@@ -74,8 +74,10 @@ class MainController extends BaseController
     {
         $fitur = new Fitur();
         $footer = new Footer();
+        $harga = new PaketHarga();
         $data = [
             // 'fitur' => $fitur->findAll(),
+            'paketharga' => $harga->where('id_solusi',$id)->findAll(),
             'fitur' => $fitur->where('id_solusi' , $id )->findAll(),
             'footer' => $footer->findAll()
         ];
