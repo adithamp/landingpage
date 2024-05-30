@@ -52,44 +52,45 @@ Solusi
             </div>
             <br>
             <?php foreach ($solusi as $key => $value) { ?>
-                <div id="tab<?= $key + 1 ?>" class="tabcontent aktif"> <!-- Menambahkan class aktif -->
-                    <div class="row d-flex justify-content-center">
-                        <?php
-                        if ($paketharga[$value['id']] != null) {
-                            foreach ($paketharga[$value['id']] as $key => $value) { ?>
-                                <br>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card shadow" style="background-color: white; border-radius: 10px; width: 300px; ">
-                                        <div class="card-body">
-                                            <h4 class="card-title text-center"><b><?= $value['nama_paket'] ?></b></h4>
-                                            <p class="card-text text-center" style="font-weight: 600; font-size: 20px;">
-                                                <?= $value['kategori_harga'] ?>
-                                            </p>
-                                            <hr>
-                                            <p class="card-text text-center" style="font-size: 20px;">Rp.
-                                                <?= number_format($value['harga'], '0') ?>
-                                            </p>
-                                            <p class="card-text text-center" style="font-weight: 600;font-size: 17px;">
-                                                Mendapatkan
-                                                Modul</p>
-                                            <ul class="list-unstyled">
-                                                <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
-                                                    Admisi</li>
-                                                <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
-                                                    Dashboard</li>
-                                                <li style="font-size: 13px;"><i class="ti ti-check text-success"></i> Booking Online
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php }
-                        } else { ?>
-                            <p class="text-center light">Paket harga belum tersedia</p>
-                        <?php } ?>
+    <div id="tab<?= $key + 1 ?>" class="tabcontent aktif">
+        <div class="row d-flex justify-content-center">
+            <?php
+            if ($paketharga[$value['id']] != null) {
+                // Menggunakan array_slice untuk membatasi jumlah data yang ditampilkan menjadi 3
+                $limited_packages = array_slice($paketharga[$value['id']], 0, 3);
+                foreach ($limited_packages as $key => $package) { ?>
+                    <div class="col-md-4 mb-3">
+                        <div class="card shadow" style="background-color: white; border-radius: 10px; width: 300px; ">
+                            <div class="card-body">
+                                <h4 class="card-title text-center"><b><?= $package['nama_paket'] ?></b></h4>
+                                <p class="card-text text-center" style="font-weight: 600; font-size: 20px;">
+                                    <?= $package['kategori_harga'] ?>
+                                </p>
+                                <hr>
+                                <p class="card-text text-center" style="font-size: 20px;">Rp.
+                                    <?= number_format($package['harga'], '0') ?>
+                                </p>
+                                <p class="card-text text-center" style="font-weight: 600;font-size: 17px;">
+                                    Mendapatkan Modul</p>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
+                                        Admisi</li>
+                                    <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
+                                        Dashboard</li>
+                                    <li style="font-size: 13px;"><i class="ti ti-check text-success"></i> Booking Online
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                <?php }
+            } else { ?>
+                <p class="text-center light">Paket harga belum tersedia</p>
             <?php } ?>
+        </div>
+    </div>
+<?php } ?>
+
 
 
 
