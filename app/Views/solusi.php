@@ -52,7 +52,7 @@ Solusi
             </div>
             <br>
             <?php foreach ($solusi as $key => $value) { ?>
-    <div id="tab<?= $key + 1 ?>" class="tabcontent aktif">
+    <div id="tab<?= $key + 1 ?>" class="tabcontent aktif btn-aktiv">
         <div class="row d-flex justify-content-center">
             <?php
             if ($paketharga[$value['id']] != null) {
@@ -157,6 +157,16 @@ Solusi
 
         // Tambahkan kelas 'aktif' ke tombol yang membuka tab
         evt.currentTarget.className += " aktif";
+
+        evt.currentTarget.style.backgroundColor = "#03c988 ";
+
+        // Hapus warna latar belakang dari tab sebelumnya yang tidak aktif
+        var tabs = document.getElementsByClassName("shadow tablink rounded");
+        for (var i = 0; i < tabs.length; i++) {
+            if (tabs[i] !== evt.currentTarget) {
+                tabs[i].style.backgroundColor = "";
+            }
+        }
     }
 
     // Secara default, buka tab pertama
