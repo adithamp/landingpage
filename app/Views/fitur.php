@@ -49,33 +49,47 @@ fitur
 
         </div>
     </div>
+    <div class="col-12 text-center">
+        <h3 class="fw-bold">Paket harga</h3>
+    </div>
     <div class="row justify-content-center d-flex" style="flex-wrap: wrap;">
-        <?php foreach ($paketharga as $key => $value) { ?>
-            <div class="col-md-3 mb-3">
-                <div class="card shadow" style="background-color: white; border-radius: 10px;">
-                    <div class="card-body">
-                        <h4 class="card-title text-center"><b><?= $value['nama_paket'] ?></b></h4>
-                        <p class="card-text text-center" style="font-weight: 600; font-size: 20px;">
-                            <?= $value['kategori_harga'] ?>
-                        </p>
-                        <hr>
-                        <p class="card-text text-center" style="font-size: 20px;">Rp.
-                            <?= number_format($value['harga'], '0') ?>
-                        </p>
-                        <p class="card-text text-center" style="font-weight: 600;font-size: 17px;">
-                            Mendapatkan Modul</p>
-                        <ul class="list-unstyled">
-                            <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
-                                Admisi</li>
-                            <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
-                                Dashboard</li>
-                            <li style="font-size: 13px;"><i class="ti ti-check text-success"></i> Booking Online
-                            </li>
-                        </ul>
+        <?php if ($paketharga) { ?>
+            <?php foreach ($paketharga as $key => $value) { ?>
+                <div class="col-md-3 mb-3">
+                    <div class="card shadow" style="background-color: white; border-radius: 10px;">
+                        <div class="card-body">
+                            <p class="card-text text-center" style="font-weight: 600; font-size: 24px;">
+                                <?= $value['kategori_harga'] ?>
+                            </p>
+                            <!-- <hr> -->
+                            <p class=" text-center " style="font-size: 14px;">Untuk <?= $value['nama_paket'] ?></p>
+                            <!-- <h4 class="card-title text-center"><b></b></h4> -->
+                            <p class="card-text text-center mt-2" style="font-size: 20px;">Rp.
+                                <?= number_format($value['harga'], '0') ?>
+                            </p>
+                            <p class="card-text text-center" style="font-weight: 600;font-size: 17px;">
+                                Mendapatkan Modul</p>
+                            <ul class="list-unstyled">
+                                <?php foreach ($benefit as $key => $benefit2) { ?>
+                                    <?php if ($benefit2['id_paket_harga'] == $value['id']) { ?>
+                                        <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
+                                            <?= $benefit2['nama_benefit'] ?></li>
+                                    <?php } else { ?>
+                                        <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
+                                            belum ada benefit</li>
+                                    <?php } ?>
+                                <?php } ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+            <?php } ?>
+        <?php } else { ?>
+            <div class="col-md-3 mb-3 text-center">
+                <p>Belum ada paket harga</p>
             </div>
         <?php } ?>
+
     </div>
 
     <div class="row" style="margin-top: 50px;">

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\Benefit;
 use App\Models\Fitur;
 use App\Models\Footer;
 use App\Models\Headersolusi;
@@ -50,12 +51,13 @@ class MainController extends BaseController
         $solusi = new Solusi();
         $headsolusi = new Headersolusi();
         $paketharga = new PaketHarga();
+        $benefit = new Benefit();
         $footer = new Footer();
 
         $solutions = $solusi->findAll();
         $groupedHarga = [];
-        foreach($solutions as $solution):
-            $prices = $paketharga->where('id_solusi',$solution['id'])->findAll();
+        foreach ($solutions as $solution) :
+            $prices = $paketharga->where('id_solusi', $solution['id'])->findAll();
             $groupedHarga[$solution['id']] = $prices;
         endforeach;
 
@@ -63,6 +65,7 @@ class MainController extends BaseController
             'solusi' => $solusi->findAll(),
             'paketharga' => $groupedHarga,
             'headsolusi' => $headsolusi->findAll(),
+            'benefit' => $benefit->findAll(),
             'footer' => $footer->findAll(),
         ];
         $head = $headsolusi->findAll();
@@ -74,11 +77,13 @@ class MainController extends BaseController
     {
         $fitur = new Fitur();
         $footer = new Footer();
+        $benefit = new Benefit();
         $harga = new PaketHarga();
         $data = [
             // 'fitur' => $fitur->findAll(),
-            'paketharga' => $harga->where('id_solusi',$id)->findAll(),
-            'fitur' => $fitur->where('id_solusi' , $id )->findAll(),
+            'paketharga' => $harga->where('id_solusi', $id)->findAll(),
+            'benefit' => $benefit->findAll(),
+            'fitur' => $fitur->where('id_solusi', $id)->findAll(),
             'footer' => $footer->findAll()
         ];
         // dd($data);
@@ -91,14 +96,14 @@ class MainController extends BaseController
         $layout = new Layout();
         $detail_fitur = new Detailfitur();
         $footer = new Footer();
-    
+
         $data = [
             'layout' => $layout->findAll(),
-            'detailfitur' =>$detail_fitur->where('id_fitur' , $id )->bebas(),
+            'detailfitur' => $detail_fitur->where('id_fitur', $id)->bebas(),
             'footer' => $footer->findAll()
         ];
 
-        return view('detail_fitur',$data);
+        return view('detail_fitur', $data);
     }
 
     public function tentangkami()
@@ -111,7 +116,7 @@ class MainController extends BaseController
             'headeraboutus' => $headaboutus->findAll(),
             'footer' => $footer->findAll()
         ];
-        
+
 
         return view('tentangkami', $data);
     }
@@ -121,10 +126,10 @@ class MainController extends BaseController
         $footer = new Footer();
         $privacypolicy = new Privacypolicy();
         $data = [
-            'privacypolicy' =>$privacypolicy->findAll(),
+            'privacypolicy' => $privacypolicy->findAll(),
             'footer' => $footer->findAll()
         ];
-        return view('privacypolicy',$data);
+        return view('privacypolicy', $data);
     }
 
     public function terms()
@@ -135,7 +140,7 @@ class MainController extends BaseController
             'termscondition' => $terms->findAll(),
             'footer' => $footer->findAll()
         ];
-        return view('termcondition',$data);
+        return view('termcondition', $data);
     }
 
     public function ajukan_page_solusi()
@@ -155,7 +160,7 @@ class MainController extends BaseController
                 'nomor_telepon' => $this->request->getPost('nomor_telepon'),
                 'pesan' => $this->request->getPost('pesan'),
             ]);
-            session()->setFlashdata('sweetalert',"
+            session()->setFlashdata('sweetalert', "
             
                 Swal.fire({
                     title: 'Berhasil',
@@ -167,7 +172,7 @@ class MainController extends BaseController
             ");
             return redirect()->back()->to('/solusi');
         } else {
-            session()->setFlashdata('sweetalert',"
+            session()->setFlashdata('sweetalert', "
             
                 Swal.fire({
                     title: 'Gagal',
@@ -179,7 +184,6 @@ class MainController extends BaseController
             ");
             return redirect()->back()->to('/solusi');
         }
-        
     }
     public function ajukan_page_beranda()
     {
@@ -198,7 +202,7 @@ class MainController extends BaseController
                 'nomor_telepon' => $this->request->getPost('nomor_telepon'),
                 'pesan' => $this->request->getPost('pesan'),
             ]);
-            session()->setFlashdata('sweetalert',"
+            session()->setFlashdata('sweetalert', "
             
                 Swal.fire({
                     title: 'Berhasil',
@@ -210,7 +214,7 @@ class MainController extends BaseController
             ");
             return redirect()->back()->to('/');
         } else {
-            session()->setFlashdata('sweetalert',"
+            session()->setFlashdata('sweetalert', "
             
                 Swal.fire({
                     title: 'Gagal',
@@ -240,7 +244,7 @@ class MainController extends BaseController
                 'nomor_telepon' => $this->request->getPost('nomor_telepon'),
                 'pesan' => $this->request->getPost('pesan'),
             ]);
-            session()->setFlashdata('sweetalert',"
+            session()->setFlashdata('sweetalert', "
             <script>
                 Swal.fire({
                     title: 'Berhasil',
@@ -252,7 +256,7 @@ class MainController extends BaseController
             ");
             return redirect()->back();
         } else {
-            session()->setFlashdata('sweetalert',"
+            session()->setFlashdata('sweetalert', "
             <script>
                 Swal.fire({
                     title: 'Gagal',

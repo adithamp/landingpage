@@ -6,6 +6,11 @@ Solusi
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
 <link rel="stylesheet" href="public/asset/sweetalert2/dist/sweetalert2.min.css">
+<!-- <style>
+    .shadow tablink rounded aktif{
+        background-color: #4CAF50;
+    }
+</style> -->
 <div class="container">
     <br>
     <div class="col-12 d-flex justify-content-center">
@@ -41,7 +46,7 @@ Solusi
                 <div class="row justify-content-center">
                     <?php foreach ($solusi as $key => $value) { ?>
                         <div class="col-sm-6 col-md-4 col-lg-3 mb-3"> <!-- Mengatur lebar tab sesuai dengan ukuran layar -->
-                            <div class="shadow tablink rounded" onclick="bukaTab(event, 'tab<?= $key + 1 ?>')" style="background-color: white; border: 0.5px #03c988 solid;">
+                            <div class="shadow tablink rounded-5" onclick="bukaTab(event, 'tab<?= $key + 1 ?>')" style="background-color: white; border: 0.5px #03c988 solid;">
                                 <div class="text-center ">
                                     <h6 class="fw-bold pt-2"><?= $value['nama_solusi'] ?></h6>
                                 </div>
@@ -52,44 +57,53 @@ Solusi
             </div>
             <br>
             <?php foreach ($solusi as $key => $value) { ?>
-    <div id="tab<?= $key + 1 ?>" class="tabcontent aktif btn-aktiv">
-        <div class="row d-flex justify-content-center">
-            <?php
-            if ($paketharga[$value['id']] != null) {
-                // Menggunakan array_slice untuk membatasi jumlah data yang ditampilkan menjadi 3
-                $limited_packages = array_slice($paketharga[$value['id']], 0, 3);
-                foreach ($limited_packages as $key => $package) { ?>
-                    <div class="col-md-4 mb-3">
-                        <div class="card shadow" style="background-color: white; border-radius: 10px; width: 300px; ">
-                            <div class="card-body">
-                                <h4 class="card-title text-center"><b><?= $package['nama_paket'] ?></b></h4>
-                                <p class="card-text text-center" style="font-weight: 600; font-size: 20px;">
-                                    <?= $package['kategori_harga'] ?>
-                                </p>
-                                <hr>
-                                <p class="card-text text-center" style="font-size: 20px;">Rp.
-                                    <?= number_format($package['harga'], '0') ?>
-                                </p>
-                                <p class="card-text text-center" style="font-weight: 600;font-size: 17px;">
-                                    Mendapatkan Modul</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
-                                        Admisi</li>
-                                    <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
+                <div id="tab<?= $key + 1 ?>" class="tabcontent aktif btn-aktiv">
+                    <div class="row d-flex justify-content-center">
+                        <?php
+                        if ($paketharga[$value['id']] != null) {
+                            // Menggunakan array_slice untuk membatasi jumlah data yang ditampilkan menjadi 3
+                            $limited_packages = array_slice($paketharga[$value['id']], 0, 3);
+                            foreach ($limited_packages as $key => $package) { ?>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card shadow" style="background-color: white; border-radius: 10px; width: 300px; ">
+                                        <div class="card-body">
+                                            <p class="card-text text-center" style="font-weight: 600; font-size: 24px;">
+                                                <?= $package['kategori_harga'] ?>
+                                            </p>
+                                            <!-- <hr> -->
+                                            <p class=" text-center " style="font-size: 14px;">Untuk <?= $package['nama_paket'] ?></p>
+                                            <!-- <h4 class="card-title text-center"><b></b></h4> -->
+                                            <p class="card-text text-center mt-2" style="font-size: 20px;">Rp.
+                                                <?= number_format($package['harga'], '0') ?>
+                                            </p>
+                                            <p class="card-text text-center" style="font-weight: 600;font-size: 17px;">
+                                                Mendapatkan Modul</p>
+                                            <ul class="list-unstyled">
+                                                <?php foreach ($benefit as $key => $benefit2) { ?>
+                                                    <?php if ($benefit2['id_paket_harga'] == $package['id']) { ?>
+                                                        <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
+                                                            <?= $benefit2['nama_benefit'] ?></li>
+                                                    <?php } else { ?>
+                                                        <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
+                                                            belum ada benefit</li>
+                                                    <?php } ?>
+                                                <?php } ?>
+
+                                                <!-- <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
                                         Dashboard</li>
                                     <li style="font-size: 13px;"><i class="ti ti-check text-success"></i> Booking Online
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                                    </li> -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php }
+                        } else { ?>
+                            <p class="text-center light">Paket harga belum tersedia</p>
+                        <?php } ?>
                     </div>
-                <?php }
-            } else { ?>
-                <p class="text-center light">Paket harga belum tersedia</p>
+                </div>
             <?php } ?>
-        </div>
-    </div>
-<?php } ?>
 
 
 
@@ -159,12 +173,14 @@ Solusi
         evt.currentTarget.className += " aktif";
 
         evt.currentTarget.style.backgroundColor = "#03c988 ";
+        // evt.currentTarget.style.Color = "#fff ";
 
         // Hapus warna latar belakang dari tab sebelumnya yang tidak aktif
-        var tabs = document.getElementsByClassName("shadow tablink rounded");
+        var tabs = document.getElementsByClassName("shadow tablink rounded-5");
         for (var i = 0; i < tabs.length; i++) {
             if (tabs[i] !== evt.currentTarget) {
                 tabs[i].style.backgroundColor = "";
+                // tabs[i].style.Color = "#000";
             }
         }
     }

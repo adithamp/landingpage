@@ -36,8 +36,7 @@ Home
             <?php foreach ($banner as $key => $value) { ?>
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<?= $key ?>" <?php if ($key === 0) {
                                                                                                                 echo 'class="active"';
-                                                                                                            }
-                                                                                                            ?> aria-label="Slide <?= $key + 1 ?>"></button>
+                                                                                                            }?> aria-label="Slide <?= $key + 1 ?>"></button>
             <?php } ?>
         </div>
         <div class="carousel-inner">
@@ -48,11 +47,11 @@ Home
                                                 }
                                                 ?>">
                         <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <img class="img-thumbnail" src="<?= $value['gambar'] ?>" class="img-fluid" width="100%" height="400px">
+                            <div class="col-md-7 ">
+                                <img class="rounded" src="<?= $value['gambar'] ?>" class="img-fluid" width="100%" height="480px">
 
                             </div>
-                            <div class="col-md-6 text-end">
+                            <div class="col-md-5 text-end">
                                 <h2 class="fw-bold"><?= $value['judul'] ?></h2>
                                 <p><?= $value['deskripsi'] ?></p>
                             </div>
@@ -69,7 +68,7 @@ Home
                                 <p><?= $value['deskripsi'] ?></p>
                             </div>
                             <div class="col-md-6">
-                                <img class="img-thumbnail" src="<?= $value['gambar'] ?>" class="img-fluid" width="100%" height="400px">
+                                <img class="rounded" src="<?= $value['gambar'] ?>" class="img-fluid" width="100%" height="500px">
                             </div>
                         </div>
                     </div>
