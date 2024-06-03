@@ -7,7 +7,7 @@ fitur
 <link href="<?= base_url('css/main.css') ?>" rel="stylesheet">
 <link rel="stylesheet" href="<?= base_url('asset/poppins/font.css') ?>">
 <link rel="stylesheet" href="<?= base_url('../asset/sweetalert2/dist/sweetalert2.min.css') ?>">
-<div class="container">
+<div class="container p-4 ">
     <div class="col-12 " style="text-align: center;">
         <?php if ($fitur) { ?>
             <h1 class="mb-lg-3 mt-5 fw-bold ">Fitur</h1>

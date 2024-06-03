@@ -4,7 +4,7 @@ Solusi
 <?php $this->endsection() ?>
 <?php $this->section('content') ?>
 
-<div class="container mt-4">
+<div class="container mt-4 p-4">
     <div class="d-flex flex-column-reverse flex-md-row justify-content-md-between align-items-center">
         <div style="margin-top: 50px; margin-right: 50px;">
             <h2><?= $headeraboutus[0]['judul_banner'] ?></h2>

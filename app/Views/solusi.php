@@ -58,7 +58,7 @@ Solusi
             <br>
             <?php foreach ($solusi as $key => $value) { ?>
                 <div id="tab<?= $key + 1 ?>" class="tabcontent aktif btn-aktiv">
-                    <div class="row d-flex justify-content-center">
+                    <div class="row d-flex justify-content-center" style="margin: auto;">
                         <?php
                         if ($paketharga[$value['id']] != null) {
                             // Menggunakan array_slice untuk membatasi jumlah data yang ditampilkan menjadi 3
@@ -88,11 +88,6 @@ Solusi
                                                             belum ada benefit</li>
                                                     <?php } ?>
                                                 <?php } ?>
-
-                                                <!-- <li class="mb-2" style="font-size: 13px;"><i class="ti ti-check text-success"></i>
-                                        Dashboard</li>
-                                    <li style="font-size: 13px;"><i class="ti ti-check text-success"></i> Booking Online
-                                    </li> -->
                                             </ul>
                                         </div>
                                     </div>
@@ -104,14 +99,10 @@ Solusi
                     </div>
                 </div>
             <?php } ?>
-
-
-
-
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container p-4">
     <div class="row" style="margin-top: 50px;">
         <div class="col-lg-6 col-md-6 col-sm-12 mt-4 mt-md-0">
             <div style="text-align: left;">

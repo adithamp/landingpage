@@ -29,7 +29,7 @@ Home
         margin-bottom: 20px;
     }
 </style>
-<div class="container">
+<div class="container p-4">
     <div class="col-12" style="height: 20px;"></div>
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-indicators">
