@@ -94,15 +94,17 @@ class MainController extends BaseController
         return view('fitur', $data);
     }
 
-    public function detail_fitur($id)
+    public function detail_fitur($slug)
     {
         $layout = new Layout();
+        $m_fitur = new Fitur();
+        $fitur = $m_fitur->where('slug',$slug)->first();
         $detail_fitur = new Detailfitur();
         $footer = new Footer();
 
         $data = [
             'layout' => $layout->findAll(),
-            'detailfitur' => $detail_fitur->where('id_fitur', $id)->bebas(),
+            'detailfitur' => $detail_fitur->where('id_fitur', $fitur['id'])->bebas(),
             'footer' => $footer->findAll()
         ];
 

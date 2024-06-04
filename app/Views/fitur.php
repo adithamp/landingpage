@@ -26,7 +26,7 @@ fitur
                                     <p class="card-text mb-3" style="font-size: 14px;"><?= $value['deskripsi'] ?></p>
                                 </div>
                                 <div class="col-12">
-                                    <a href="/detail_fitur/<?= $value['id'] ?>" method="post">
+                                    <a href="/detail_fitur/<?= $value['slug'] ?>" method="post">
                                         <button class="btn  btn-sm px-3 py-2" style="height: 40px; font-size: 13px; width: 100%;">Detail Fitur</button>
                                     </a>
                                 </div>
