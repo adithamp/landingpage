@@ -9,7 +9,7 @@ $routes->get('/', 'MainController::index');
 
 $routes->get('/home', 'MainController::index');
 $routes->get('/solusi', 'MainController::solusi');
-$routes->get('/fitur/(:num)', 'MainController::fitur/$1');
+$routes->get('/fitur/(:segment)', 'MainController::fitur/$1');
 $routes->get('/detail_fitur/(:num)', 'MainController::detail_fitur/$1');
 $routes->get('/tentangkami', 'MainController::tentangkami');
 $routes->get('/privacypolicy', 'MainController::privacy');

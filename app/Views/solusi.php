@@ -28,7 +28,7 @@ Solusi
                         <div class="card-body p-3 text-center">
                             <h5 class="card-title"><b><?= $value['nama_solusi'] ?></b></h5>
                             <p class="card-text" style="font-size: 15px; height: 50px;"><?= $value['deskripsi'] ?></p>
-                            <form action="/fitur/<?= $value['id'] ?>">
+                            <form action="/fitur/<?= $value['slug'] ?>">
                                 <button class="btn btn-lg btn btn-block" style="height: 40px; font-size: 16px; width: 100%;">Fitur</button>
                             </form>
                         </div>

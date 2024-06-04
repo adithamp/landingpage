@@ -73,7 +73,7 @@ class MainController extends BaseController
         return view('solusi', $data);
     }
 
-    public function fitur($id)
+    public function fitur($slug)
     {
         $fitur = new Fitur();
         $footer = new Footer();
@@ -81,9 +81,9 @@ class MainController extends BaseController
         $harga = new PaketHarga();
         $data = [
             // 'fitur' => $fitur->findAll(),
-            'paketharga' => $harga->where('id_solusi', $id)->findAll(),
+            'paketharga' => $harga->findAll(),
             'benefit' => $benefit->findAll(),
-            'fitur' => $fitur->where('id_solusi', $id)->findAll(),
+            'fitur' => $fitur->where('slug', $slug)->findAll(),
             'footer' => $footer->findAll()
         ];
         // dd($data);
