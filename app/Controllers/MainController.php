@@ -75,6 +75,9 @@ class MainController extends BaseController
 
     public function fitur($slug)
     {
+
+        $m_solusi = new Solusi();
+        $solusi = $m_solusi->where('slug',$slug)->first();
         $fitur = new Fitur();
         $footer = new Footer();
         $benefit = new Benefit();
@@ -83,7 +86,7 @@ class MainController extends BaseController
             // 'fitur' => $fitur->findAll(),
             'paketharga' => $harga->findAll(),
             'benefit' => $benefit->findAll(),
-            'fitur' => $fitur->where('slug', $slug)->findAll(),
+            'fitur' => $fitur->where('id_solusi', $solusi['id'])->findAll(),
             'footer' => $footer->findAll()
         ];
         // v($slug);
