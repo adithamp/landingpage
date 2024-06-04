@@ -86,8 +86,8 @@ class MainController extends BaseController
             'fitur' => $fitur->where('slug', $slug)->findAll(),
             'footer' => $footer->findAll()
         ];
-        // dd($data);
-
+        // v($slug);
+            // var_dump($slug);
         return view('fitur', $data);
     }
 
