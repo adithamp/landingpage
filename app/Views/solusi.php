@@ -133,7 +133,7 @@ Solusi
                         <textarea class="form-control" name="pesan" rows="6"></textarea>
                     </div>
                     <br>
-                    <center><button type="submit" class="btn btn">Ajukan Keluhan</button></center>
+                    <center><button type="submit" class="btn btn "><i class="ti ti-send" style="font-size: 25px;"></i>Ajukan Keluhan</button></center>
                 </div>
             </form>
         </div>

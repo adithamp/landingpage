@@ -4,7 +4,7 @@ Terms Conditions
 <?php $this->endsection() ?>
 <?php $this->section('content') ?>
 
-<div class="container card text-center p-4" style="margin-top: 30px ;">
+<div class="container p-4" style="margin-top: 30px ;">
     <?php foreach ($termscondition as $key => $value) { ?>
         <div>
             <p><?= $value['deskripsi'] ?></p>

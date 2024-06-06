@@ -28,6 +28,12 @@ Home
         line-height: 1.6;
         margin-bottom: 20px;
     }
+    /* Tampilan mobile */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px; /* Atur tinggi gambar untuk tampilan mobile */
+    }
+}
 </style>
 <div class="container p-4">
     <div class="col-12" style="height: 20px;"></div>
@@ -140,7 +146,7 @@ Home
             <?php foreach ($artikel as $key => $value) { ?>
                 <div class="col-12 col-md-8 col-lg-6 mb-4">
                     <div class="card shadow" style="padding: 24px;">
-                        <div class="card-body">
+                        <div class="card-body" style="height: 300px;">
                             <h4><?= $value['nama_artikel'] ?></h4>
                             <p class="pt-2"><?= $value['deskripsi'] ?></p>
                         </div>
@@ -180,7 +186,7 @@ Home
                         <textarea class="form-control" name="pesan" rows="6"></textarea>
                     </div>
                     <br>
-                    <center><button type="submit" class="btn btn">Ajukan Keluhan</button></center>
+                    <center><button type="submit" class="btn btn "><i class="ti ti-send" style="font-size: 25px;"></i>Ajukan Keluhan</button></center>
                 </div>
             </form>
         </div>

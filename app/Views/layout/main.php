@@ -49,7 +49,7 @@
     <div class="col-12 mt-4 border">
         <div class="card" style="background-color: white;">
             <div class="card-body col-12 row d-flex">
-                <div class="col-md-4 mb-3 mb-md-0">
+                <d  iv class="col-md-4 mb-3 mb-md-0">
                     <div class="d-flex justify-content-center gap-1 mt-2">
                         <div class="lingkaran p-2 ">
                             <a class="text-decoration-none" href="<?= $footer[0]['link_whatsapp'] ?>">
@@ -65,7 +65,7 @@
                     <div class="text-center mt-4">
                         <p class="txt m-0 p-0"><?= $footer[0]['nama_lengkap'] ?></p>
                     </div>
-                </div>
+                </d>
                 <div class="col-md-4 mb-3 mb-md-0">
                     <div class="text-center">
                         <p class="txt p-0 m-0 fw-bold">Informasi</p>

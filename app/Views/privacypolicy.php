@@ -5,7 +5,7 @@ Privacy Policy
 <?php $this->section('content') ?>
 
 
-<div class="container card text-center p-4" style="margin-top: 30px ;">
+<div class="container p-4" style="margin-top: 30px ;">
     <?php foreach ($privacypolicy as $key => $value) { ?>
         <div>
             <p><?= $value['deskripsi'] ?></p>

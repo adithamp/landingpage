@@ -7,6 +7,7 @@ use App\Models\Benefit;
 use App\Models\Fitur;
 use App\Models\Footer;
 use App\Models\Headersolusi;
+use App\Models\Headfitur;
 use App\Models\KontakUser;
 use App\Models\PaketHarga;
 use App\Models\Solusi;
@@ -82,12 +83,14 @@ class MainController extends BaseController
         $footer = new Footer();
         $benefit = new Benefit();
         $harga = new PaketHarga();
+        $head = new Headfitur();
         $data = [
             // 'fitur' => $fitur->findAll(),
             'paketharga' => $harga->findAll(),
             'benefit' => $benefit->findAll(),
             'fitur' => $fitur->where('id_solusi', $solusi['id'])->findAll(),
-            'footer' => $footer->findAll()
+            'footer' => $footer->findAll(),
+            'head' => $head->findAll()
         ];
         // v($slug);
             // var_dump($slug);

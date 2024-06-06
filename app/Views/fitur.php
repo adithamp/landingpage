@@ -10,8 +10,11 @@ fitur
 <div class="container p-4 ">
     <div class="col-12 " style="text-align: center;">
         <?php if ($fitur) { ?>
-            <h1 class="mb-lg-3 mt-5 fw-bold ">Fitur</h1>
-            <p>Beberapa Fitur untuk membantu Anda dalam mengakses kesehatan</p>
+            <h1 class="mb-lg-3 mt-5 fw-bold "><?= $head[0]['judul_fitur'] ?></h1>
+            <p><?= $head[0]['deskripsi'] ?></p>
+            <!-- <p>Beberapa Fitur untuk membantu Anda dalam mengakses kesehatan</p> -->
+        <?php } else { ?>
+
         <?php } ?>
         <div class="row mt-4 justify-content-center">
 
@@ -49,10 +52,10 @@ fitur
 
         </div>
     </div>
-    <div class="col-12 text-center">
+    <div class="col-12 text-center mt-2">
         <h3 class="fw-bold">Paket harga</h3>
     </div>
-    <div class="row justify-content-center d-flex" style="flex-wrap: wrap;">
+    <div class="row justify-content-center d-flex mt-4" style="flex-wrap: wrap;">
         <?php if ($paketharga) { ?>
             <?php foreach ($paketharga as $key => $value) { ?>
                 <div class="col-md-3 mb-3">
@@ -121,7 +124,7 @@ fitur
                         <textarea class="form-control" name="pesan" rows="6"></textarea>
                     </div>
                     <br>
-                    <center><button type="submit" class="btn btn">Ajukan Keluhan</button></center>
+                    <center><button type="submit" class="btn btn "><i class="ti ti-send" style="font-size: 25px;"></i>Ajukan Keluhan</button></center>
                 </div>
             </form>
         </div>
