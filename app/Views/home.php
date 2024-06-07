@@ -33,6 +33,12 @@ Home
     .carousel-item img {
         height: 300px; /* Atur tinggi gambar untuk tampilan mobile */
     }
+    .carousel-inner p{
+        text-align: center;
+    }
+    .carousel-inner h2{
+        text-align: center;
+    }
 }
 </style>
 <div class="container p-4">

@@ -88,8 +88,8 @@ fitur
                 </div>
             <?php } ?>
         <?php } else { ?>
-            <div class="col-md-3 mb-3 text-center">
-                <p>Belum ada paket harga</p>
+            <div class="col-md-4 mb-3 text-center">
+            <h5 class="card-title mt-3 mb-2" style="font-size: 20px;"><i class="ti ti-alert-triangle pe-2 fs-1 align-middle p-1 "></i>Belum ada Paket Harga</h5>
             </div>
         <?php } ?>
 

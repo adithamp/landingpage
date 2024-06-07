@@ -94,7 +94,7 @@ Solusi
                                 </div>
                             <?php }
                         } else { ?>
-                            <p class="text-center light">Paket harga belum tersedia</p>
+                           <h5 class="card-title mt-3 mb-2 text-center" style="font-size: 20px;"><i class="ti ti-alert-triangle pe-2 fs-1 align-middle p-1 "></i>Belum ada Paket Harga</h5>
                         <?php } ?>
                     </div>
                 </div>
